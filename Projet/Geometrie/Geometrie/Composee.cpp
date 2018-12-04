@@ -1,8 +1,10 @@
 #include "Composee.h"
 
-Composee::Composee():FormeGeometrique() {}
+using namespace std;
 
-Composee::Composee(const string c):FormeGeometrique(c) {}
+Composee::Composee() :FormeGeometrique() {}
+
+Composee::Composee(const string c) : FormeGeometrique(c) {}
 
 Composee::~Composee() {
 	groupeSimple.erase(groupeSimple.begin(), groupeSimple.end());
@@ -40,28 +42,28 @@ Composee* Composee::cloner() {
 }
 
 void Composee::dessiner() {
-	for (int i = 0; i < groupeSimple.size(); i++) {
-		(groupeSimple.begin() + i).dessiner();
+	/*for (int i = 0; i < groupeSimple.size(); i++) {
+		//(groupeSimple.begin() + i).dessiner();
 	}
 	for (int i = 0; i < groupeComposee.size(); i++) {
-		(groupeComposee.begin() + i).dessiner();
-	}
+		//(groupeComposee.begin() + i).dessiner();
+	}*/
 }
 
 void Composee::rotation(const double angle) {
-	for (int i = 0; i < groupeSimple.size(); i++) {
-		(groupeSimple.begin() + i).rotation(angle);
+	/*for (int i = 0; i < groupeSimple.size(); i++) {
+		//(groupeSimple.begin() + i).rotation(angle);
 	}
 	for (int i = 0; i < groupeComposee.size(); i++) {
-		(groupeComposee.begin() + i).rotation(angle);
-	}
+		//(groupeComposee.begin() + i).rotation(angle);
+	}*/
 }
 
 void Composee::translation(const Vecteur2D &trans) {
-	for (int i = 0; i < groupeSimple.size(); i++) {
-		(groupeSimple.begin() + i).translation(trans);
+	/*for (int i = 0; i < groupeSimple.size(); i++) {
+		//(groupeSimple.begin() + i).translation(trans);
 	}
 	for (int i = 0; i < groupeComposee.size(); i++) {
-		(groupeComposee.begin() + i).translation(trans);
-	}
+		//(groupeComposee.begin() + i).translation(trans);
+	}*/
 }

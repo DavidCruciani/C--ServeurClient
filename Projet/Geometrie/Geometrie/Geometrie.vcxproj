@@ -124,6 +124,7 @@
   <ItemGroup>
     <ClCompile Include="Composee.cpp" />
     <ClCompile Include="FormeGeometrique.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Simple.cpp" />
     <ClCompile Include="Vecteur2D.cpp" />
   </ItemGroup>
