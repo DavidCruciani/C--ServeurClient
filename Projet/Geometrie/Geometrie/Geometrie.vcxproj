@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Cercle.h" />
     <ClInclude Include="Composee.h" />
     <ClInclude Include="FormeGeometrique.h" />
     <ClInclude Include="Segment.h" />
@@ -122,6 +123,7 @@
     <ClInclude Include="Vecteur2D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cercle.cpp" />
     <ClCompile Include="Composee.cpp" />
     <ClCompile Include="FormeGeometrique.cpp" />
     <ClCompile Include="main.cpp" />
