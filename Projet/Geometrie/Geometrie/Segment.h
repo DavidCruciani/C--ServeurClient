@@ -9,9 +9,9 @@ class Segment : public Simple
 {
 private:
 	Vecteur2D v1, v2;
-	Segment(const Segment&);
 public:
 	Segment();
+	Segment(const Segment&);
 	Segment(const string, const double, const double, const double, const double);
 	Segment(const double, const double, const double, const double);
 	~Segment();

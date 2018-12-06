@@ -32,6 +32,14 @@ public:
 		return Vecteur2D(x + u.x, y + u.y);
 	}
 
+	inline const bool operator == (const Vecteur2D v) {
+		return x == v.x && y == v.y;
+	}
+
+	inline const bool operator != (const Vecteur2D &v) {
+		return !(this == &v);
+	}
+
 	inline const Vecteur2D operator = (const Vecteur2D &v) const {
 		return Vecteur2D(v.x, v.y);
 	}

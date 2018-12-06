@@ -2,6 +2,8 @@
 
 Segment::Segment():Simple("Noir"), v1(0, 0), v2(0, 0) {}
 
+Segment::Segment(const Segment &s):Simple(s.couleur), v1(s.v1.x, s.v1.y), v2(s.v2.x, s.v2.y) {}
+
 Segment::Segment(const string c, const double x1, const double y1, const double x2, const double y2):Simple(c), v1(x1, y1), v2(x2, y2) {}
 
 Segment::Segment(const double x1, const double y1, const double x2, const double y2) : Simple("Noir"), v1(x1, y1), v2(x2, y2) {}

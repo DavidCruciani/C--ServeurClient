@@ -3,6 +3,8 @@
 
 Cercle::Cercle():Simple("Noir"),vCentre(0,0),rayon(0){}
 
+Cercle::Cercle(const Cercle &c):Simple(c.couleur), vCentre(c.vCentre.x, c.vCentre.y) {}
+
 Cercle::~Cercle(){}
 
 Cercle::Cercle(const double x, const double y, const double r) : Simple("Noir"), vCentre(x,y), rayon(r){}
@@ -31,6 +33,10 @@ ostream & operator <<(ostream & os, const Cercle & u) {
 	return os;
 }
 
+Simple* Cercle::cloner() const { 
+	return new Cercle(*this); 
+}
+
 Cercle::operator string() const{
 	ostringstream oss;
 	oss << "cercle: " << couleur << ", " << vCentre << ", " << rayon;
@@ -38,7 +44,7 @@ Cercle::operator string() const{
 }
 
 bool Cercle::operator==(const Cercle& c) const{
-	return couleur==c.getCouleur() && vCentre == c.getCentre() && rayon == c.getRayon();
+	return couleur==c.getCouleur() && this->getCentre() == c.getCentre() && rayon == c.getRayon();
 }
 
 void Cercle::operator=(const Cercle& c) {
@@ -48,6 +54,7 @@ void Cercle::operator=(const Cercle& c) {
 }
 
 double Cercle::getAire() const{
+	return 0;
 	//A FAIRE
 }
 

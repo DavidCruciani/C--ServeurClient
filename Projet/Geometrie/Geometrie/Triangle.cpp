@@ -2,6 +2,8 @@
 
 Triangle::Triangle():Simple(), v1(0,0), v2(0,0), v3(0,0) {}
 
+Triangle::Triangle(const Triangle &t):Simple(t.couleur), v1(t.v1.x, t.v1.y), v2(t.v2.x, t.v2.y), v3(t.v3.x,t.v3.y) {}
+
 Triangle::Triangle(const string c, const double x1, const double y1, const double x2, const double y2, const double x3, const double y3)
 	:Simple(c), v1(x1,y1), v2(x2,y2), v3(x3,y3) {}
 

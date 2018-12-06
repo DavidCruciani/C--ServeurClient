@@ -9,9 +9,9 @@ class Triangle : public Simple
 {
 private:
 	Vecteur2D v1, v2, v3;
-	Triangle(const Triangle&);
 public:
 	Triangle();
+	Triangle(const Triangle&);
 	Triangle(const string, const double, const double, const double, const double, const double, const double);
 	Triangle(const double, const double, const double, const double, const double, const double);
 	~Triangle();
