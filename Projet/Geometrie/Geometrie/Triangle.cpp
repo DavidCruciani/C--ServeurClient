@@ -51,7 +51,7 @@ Triangle::operator string() const {
 }
 
 double Triangle::getAire() const {
-	/*double norme12,norme,norme13,norme23;
+	double norme12,norme,norme13,norme23;
 
 	norme12 = v1.norme(v2);
 	norme13 = v1.norme(v3);
@@ -59,10 +59,10 @@ double Triangle::getAire() const {
 	
 	norme = (norme12 + norme13 + norme23) / 2;
 
-	//return sqrt(norme*(norme - norme12)*(norme - norme13)*(norme - norme23));
-	return 0.5 * (v2.x - v1.x)*(v3.y - v1.y) - (v3.x - v1.x)*(v2.y - v1.y);*/
+	return sqrt(norme*(norme - norme12)*(norme - norme13)*(norme - norme23));
+	//return 0.5 * (v2.x - v1.x)*(v3.y - v1.y) - (v3.x - v1.x)*(v2.y - v1.y);
 
-	return 0.5 * (v1.y*(v3.x-v2.x)+v3.y*(v2.x-v1.x)+v2.y*(v1.x-v3.x));
+	//return 0.5 * (v1.y*(v3.x-v2.x)+v3.y*(v2.x-v1.x)+v2.y*(v1.x-v3.x));
 }
 
 Simple* Triangle::cloner() const {
