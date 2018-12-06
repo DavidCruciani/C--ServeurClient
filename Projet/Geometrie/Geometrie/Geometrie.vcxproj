@@ -119,6 +119,7 @@
     <ClInclude Include="FormeGeometrique.h" />
     <ClInclude Include="Segment.h" />
     <ClInclude Include="Simple.h" />
+    <ClInclude Include="Triangle.h" />
     <ClInclude Include="Vecteur2D.h" />
   </ItemGroup>
   <ItemGroup>
@@ -127,6 +128,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Segment.cpp" />
     <ClCompile Include="Simple.cpp" />
+    <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="Vecteur2D.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

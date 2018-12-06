@@ -26,12 +26,19 @@ Vecteur2D Segment::getV2() const {
 	return v2;
 }
 
+double Segment::getAire() const {
+	return 0;
+}
+
+Simple* Segment::cloner() const {
+	return new Segment(*this);
+}
 void Segment::dessiner() {
 	//A  VOIR COMMENT FAIRE
 }
 
-void Segment::Homotetie(const Vecteur2D&, const double zoom) {
-
+void Segment::homothetie(const Vecteur2D &p, const double zoom) {
+	//A  VOIR COMMENT FAIRE
 }
 
 void Segment::rotation(const Vecteur2D &centre, const double a) {

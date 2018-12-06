@@ -48,7 +48,7 @@ void Composee::dessiner() {
 	}
 }
 
-void Composee::Homotetie(const Vecteur2D&, const double) {
+void Composee::homothetie(const Vecteur2D&, const double) {
 
 }
 

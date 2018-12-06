@@ -32,6 +32,10 @@ public:
 		return Vecteur2D(x + u.x, y + u.y);
 	}
 
+	inline const Vecteur2D operator = (const Vecteur2D &v) const {
+		return Vecteur2D(v.x, v.y);
+	}
+
 	inline const Vecteur2D operator * (const double & a) const {
 		return Vecteur2D(x*a, y*a);
 	}

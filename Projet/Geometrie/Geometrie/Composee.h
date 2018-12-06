@@ -27,7 +27,7 @@ public:
 
 	Composee* cloner();
 	void dessiner();
-	void Homotetie(const Vecteur2D&, const double);
+	void homothetie(const Vecteur2D&, const double);
 	void rotation(const Vecteur2D&, const double);
 	void translation(const Vecteur2D&);
 
