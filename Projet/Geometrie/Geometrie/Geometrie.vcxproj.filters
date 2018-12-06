@@ -38,13 +38,13 @@
     <ClCompile Include="Simple.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Composee.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Vecteur2D.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Composee.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
