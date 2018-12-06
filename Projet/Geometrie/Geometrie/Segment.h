@@ -12,17 +12,18 @@ private:
 	Segment(const Segment&);
 public:
 	Segment();
-	Segment(const string, const Vecteur2D&, const Vecteur2D&);
-	Segment(const Vecteur2D&, const Vecteur2D&);
+	Segment(const string, const double, const double, const double, const double);
+	Segment(const double, const double, const double, const double);
 	~Segment();
 
 	void setV1(const double, const double);
-	void setV1(const double, const double);
-	Vecteur2D* getV1() const;
-	Vecteur2D* getV2() const;
+	void setV2(const double, const double);
+	Vecteur2D getV1() const;
+	Vecteur2D getV2() const;
 
 	virtual void dessiner();
-	virtual void rotation(const double);
+	virtual void Homotetie(const Vecteur2D&, const double);
+	virtual void rotation(const Vecteur2D&, const double);
 	virtual void translation(const Vecteur2D&);
 };
 #endif

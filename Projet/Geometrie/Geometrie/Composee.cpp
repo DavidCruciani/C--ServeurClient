@@ -48,12 +48,16 @@ void Composee::dessiner() {
 	}
 }
 
-void Composee::rotation(const double angle) {
+void Composee::Homotetie(const Vecteur2D&, const double) {
+
+}
+
+void Composee::rotation(const Vecteur2D &centre, const double angle) {
 	for (int i = 0; i < groupeSimple.size(); i++) {
-		groupeSimple[i]->rotation(angle);
+		groupeSimple[i]->rotation(centre, angle);
 	}
 	for (int i = 0; i < groupeComposee.size(); i++) {
-		groupeComposee[i]->rotation(angle);
+		groupeComposee[i]->rotation(centre, angle);
 	}
 }
 

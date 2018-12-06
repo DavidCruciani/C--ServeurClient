@@ -27,7 +27,8 @@ public:
 
 	Composee* cloner();
 	void dessiner();
-	void rotation(const double);
+	void Homotetie(const Vecteur2D&, const double);
+	void rotation(const Vecteur2D&, const double);
 	void translation(const Vecteur2D&);
 
 	// VOIR POUR SURCHARGES OPERATEUR ET AFFICHAGE
