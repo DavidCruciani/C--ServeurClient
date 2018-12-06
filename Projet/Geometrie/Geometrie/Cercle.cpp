@@ -1,6 +1,5 @@
 #include "Cercle.h"
 
-
 Cercle::Cercle():Simple("Noir"),vCentre(0,0),rayon(0){}
 
 Cercle::Cercle(const Cercle &c):Simple(c.couleur), vCentre(c.vCentre.x, c.vCentre.y) {}
@@ -28,8 +27,8 @@ double Cercle::getRayon() const {
 	return rayon;
 }
 
-ostream & operator <<(ostream & os, const Cercle & u) {
-	os << (string)u;
+ostream & operator <<(ostream & os, const Cercle & c) {
+	os << (string)c;
 	return os;
 }
 
@@ -39,7 +38,7 @@ Simple* Cercle::cloner() const {
 
 Cercle::operator string() const{
 	ostringstream oss;
-	oss << "cercle: " << couleur << ", " << vCentre << ", " << rayon;
+	oss << "Cercle[couleur: " << couleur << ", centre: " << vCentre << ", rayon: " << rayon << "]";
 	return oss.str();
 }
 
@@ -54,8 +53,7 @@ void Cercle::operator=(const Cercle& c) {
 }
 
 double Cercle::getAire() const{
-	return 0;
-	//A FAIRE
+	return rayon * rayon* 3.141592653589;
 }
 
 void Cercle::dessiner() {

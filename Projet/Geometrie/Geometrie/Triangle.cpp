@@ -39,8 +39,30 @@ Vecteur2D Triangle::getV3() const {
 	return v3;
 }
 
+ostream & operator <<(ostream & os, const Triangle & t) {
+	os << (string)t;
+	return os;
+}
+
+Triangle::operator string() const {
+	ostringstream oss;
+	oss << "Triangle[couleur: " << couleur << ", Point 1: " << v1 << ", Point 2: " << v2 << ", Point 3: " << v3 << "]";
+	return oss.str();
+}
+
 double Triangle::getAire() const {
-	return 0;
+	/*double norme12,norme,norme13,norme23;
+
+	norme12 = v1.norme(v2);
+	norme13 = v1.norme(v3);
+	norme23 = v2.norme(v3);
+	
+	norme = (norme12 + norme13 + norme23) / 2;
+
+	//return sqrt(norme*(norme - norme12)*(norme - norme13)*(norme - norme23));
+	return 0.5 * (v2.x - v1.x)*(v3.y - v1.y) - (v3.x - v1.x)*(v2.y - v1.y);*/
+
+	return 0.5 * (v1.y*(v3.x-v2.x)+v3.y*(v2.x-v1.x)+v2.y*(v1.x-v3.x));
 }
 
 Simple* Triangle::cloner() const {

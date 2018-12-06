@@ -21,11 +21,15 @@ public:
 	Vecteur2D getV1() const;
 	Vecteur2D getV2() const;
 
+	operator string()const;
+
 	virtual double getAire() const;
 	virtual Simple* cloner() const;
 	virtual void dessiner();
 	virtual void homothetie(const Vecteur2D&, const double);
 	virtual void rotation(const Vecteur2D&, const double);
 	virtual void translation(const Vecteur2D&);
+
+	friend ostream & operator <<(ostream & os, const Segment &);
 };
 #endif

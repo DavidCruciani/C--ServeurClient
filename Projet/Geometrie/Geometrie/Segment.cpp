@@ -28,6 +28,18 @@ Vecteur2D Segment::getV2() const {
 	return v2;
 }
 
+ostream & operator <<(ostream & os, const Segment & s) {
+	os << (string)s;
+	return os;
+}
+
+Segment::operator string() const {
+	ostringstream oss;
+	oss << "Segment[couleur: " << couleur << ", Point 1: " << v1 << ", Point 2: " << v2 << "]";
+	return oss.str();
+}
+
+
 double Segment::getAire() const {
 	return 0;
 }

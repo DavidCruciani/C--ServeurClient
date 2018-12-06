@@ -2,7 +2,7 @@
 
 FormeGeometrique::FormeGeometrique():couleur("Noir") {}
 
-FormeGeometrique::FormeGeometrique(const string c):couleur("c") {}
+FormeGeometrique::FormeGeometrique(const string c):couleur(c) {}
 
 FormeGeometrique::FormeGeometrique(const FormeGeometrique &f):couleur(f.couleur) {}
 

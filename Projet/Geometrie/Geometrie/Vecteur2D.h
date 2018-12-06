@@ -55,6 +55,8 @@ public:
 		return Vecteur2D(-x, -y);
 	}
 	
+	double norme(const Vecteur2D&)const;
+
 	operator string() const;
 
 	friend ostream & operator <<(ostream & os, const Vecteur2D & u);

@@ -33,6 +33,6 @@ public:
 	virtual void rotation(const Vecteur2D&, const double);
 	virtual void translation(const Vecteur2D&);
 
-	friend ostream & operator <<(ostream & os, const Cercle & u);
+	friend ostream & operator <<(ostream & os, const Cercle & );
 };
 
