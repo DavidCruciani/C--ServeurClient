@@ -22,12 +22,12 @@ public:
 	Vecteur2D getCentre() const;
 	double getRayon() const;
 
-	virtual Simple* clone()const { return new Cercle(*this); }
+	virtual Simple* cloner()const { return new Cercle(*this); }
 	operator string()const;
 	bool operator ==(const Cercle&)const;
 	bool operator != (const Cercle & c)const { return !(*this == c); };
 
-	virtual double aire()const;
+	virtual double getAire()const;
 
 	virtual void dessiner();
 	virtual void homothetie(const Vecteur2D&, const double);

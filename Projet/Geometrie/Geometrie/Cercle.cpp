@@ -47,6 +47,9 @@ void Cercle::operator=(const Cercle& c) {
 	couleur = c.getCouleur();
 }
 
+double Cercle::getAire() const{
+	//A FAIRE
+}
 
 void Cercle::dessiner() {
 	//A  VOIR COMMENT FAIRE
