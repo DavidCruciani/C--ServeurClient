@@ -21,7 +21,7 @@ public:
 	Vecteur2D getCentre() const;
 	double getRayon() const;
 
-	virtual Simple* cloner() const; 
+	virtual FormeGeometrique* cloner() const; 
 	operator string()const;
 	bool operator ==(const Cercle&)const;
 	bool operator != (const Cercle & c)const { return !(*this == c); };

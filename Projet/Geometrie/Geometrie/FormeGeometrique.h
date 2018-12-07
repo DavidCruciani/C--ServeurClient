@@ -19,6 +19,13 @@ public:
 	void setCouleur(const string);
 	string getCouleur() const;
 
+	virtual void dessiner() = 0;
+	virtual double getAire() const = 0;
+	virtual FormeGeometrique* cloner() const = 0;
+	virtual void homothetie(const Vecteur2D&, const double) = 0;
+	virtual void rotation(const Vecteur2D&, const double) = 0;
+	virtual void translation(const Vecteur2D&) = 0;
+
 	// VOIR POUR SURCHARGES OPERATEUR ET AFFICHAGE
 };
 #endif

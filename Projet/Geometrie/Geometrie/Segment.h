@@ -24,7 +24,7 @@ public:
 	operator string()const;
 
 	virtual double getAire() const;
-	virtual Simple* cloner() const;
+	virtual FormeGeometrique* cloner() const;
 	virtual void dessiner();
 	virtual void homothetie(const Vecteur2D&, const double);
 	virtual void rotation(const Vecteur2D&, const double);

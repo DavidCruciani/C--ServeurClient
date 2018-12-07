@@ -44,7 +44,7 @@ double Segment::getAire() const {
 	return 0;
 }
 
-Simple* Segment::cloner() const {
+FormeGeometrique* Segment::cloner() const {
 	return new Segment(*this);
 }
 void Segment::dessiner() {

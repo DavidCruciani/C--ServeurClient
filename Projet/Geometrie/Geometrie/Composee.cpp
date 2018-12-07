@@ -5,67 +5,54 @@ Composee::Composee() :FormeGeometrique() {}
 Composee::Composee(const string c) : FormeGeometrique(c) {}
 
 Composee::~Composee() {
-	groupeSimple.erase(groupeSimple.begin(), groupeSimple.end());
-	groupeComposee.erase(groupeComposee.begin(), groupeComposee.end());
+	groupe.erase(groupe.begin(), groupe.end());
 }
 
-void Composee::addFormeSimple(const Simple*) {
-
-}
-
-void Composee::delFormeSimple(const Simple *s) {
-	vector<Simple*>::iterator it = find(groupeSimple.begin(), groupeSimple.end(), s);
-	groupeSimple.erase(it);
-}
-
-void Composee::delFormeSimple(const int pos) {
-	groupeSimple.erase(groupeSimple.begin() + pos);
-}
-
-void Composee::addFormeComposee(const Composee*) {
+void Composee::addForme(const FormeGeometrique*) {
 
 }
 
-void Composee::delFormeComposee(const Composee *s) {
-	vector<Composee*>::iterator it = find(groupeComposee.begin(), groupeComposee.end(), s);
-	groupeComposee.erase(it);
+void Composee::delForme(const FormeGeometrique *f) {
+	vector<FormeGeometrique*>::iterator it = find(groupe.begin(), groupe.end(), f);
+	groupe.erase(it);
 }
 
-void Composee::delFormeComposee(const int pos) {
-	groupeComposee.erase(groupeComposee.begin() + pos);
+void Composee::delForme(const int pos) {
+	groupe.erase(groupe.begin() + pos);
 }
 
-Composee* Composee::cloner() {
+FormeGeometrique* Composee::cloner() const {
 	return new Composee(*this);
 }
 
 void Composee::dessiner() {
-	for (int i = 0; i < groupeSimple.size(); i++) {
-		groupeSimple[i]->dessiner();
-	}
-	for (int i = 0; i < groupeComposee.size(); i++) {
-		groupeComposee[i]->dessiner();
+	for (int i = 0; i < groupe.size(); i++) {
+		groupe[i]->dessiner();
 	}
 }
 
-void Composee::homothetie(const Vecteur2D&, const double) {
+double Composee::getAire() const {
+	double aire = 0;
+	for (int i = 0; i < groupe.size(); i++) {
+		aire = aire + groupe[i]->getAire();
+	}
+	return aire;
+}
 
+void Composee::homothetie(const Vecteur2D &p, const double zoom) {
+	for (int i = 0; i < groupe.size(); i++) {
+		groupe[i]->homothetie(p, zoom);
+	}
 }
 
 void Composee::rotation(const Vecteur2D &centre, const double angle) {
-	for (int i = 0; i < groupeSimple.size(); i++) {
-		groupeSimple[i]->rotation(centre, angle);
-	}
-	for (int i = 0; i < groupeComposee.size(); i++) {
-		groupeComposee[i]->rotation(centre, angle);
+	for (int i = 0; i < groupe.size(); i++) {
+		groupe[i]->rotation(centre, angle);
 	}
 }
 
 void Composee::translation(const Vecteur2D &trans) {
-	for (int i = 0; i < groupeSimple.size(); i++) {
-		groupeSimple[i]->translation(trans);
-	}
-	for (int i = 0; i < groupeComposee.size(); i++) {
-		groupeComposee[i]->translation(trans);
+	for (int i = 0; i < groupe.size(); i++) {
+		groupe[i]->translation(trans);
 	}
 }

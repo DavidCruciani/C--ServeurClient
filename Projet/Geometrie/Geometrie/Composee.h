@@ -11,25 +11,23 @@ using namespace std;
 class Composee : public FormeGeometrique
 {
 private:
-	vector<Simple*> groupeSimple; 
-	vector<Composee*> groupeComposee;
+	vector<FormeGeometrique*> groupe; 
 public:
 	Composee();
 	Composee(const string);
 	~Composee();
 
-	void addFormeSimple(const Simple*);
-	void delFormeSimple(const Simple*);
-	void delFormeSimple(const int);
-	void addFormeComposee(const Composee*);
-	void delFormeComposee(const Composee*);
-	void delFormeComposee(const int);
+	void addForme(const FormeGeometrique*);
+	void delForme(const FormeGeometrique*);
+	void delForme(const int);
 
-	Composee* cloner();
-	void dessiner();
-	void homothetie(const Vecteur2D&, const double);
-	void rotation(const Vecteur2D&, const double);
-	void translation(const Vecteur2D&);
+	virtual double getAire() const;
+	
+	virtual FormeGeometrique* cloner() const;
+	virtual void dessiner();
+	virtual void homothetie(const Vecteur2D&, const double);
+	virtual void rotation(const Vecteur2D&, const double);
+	virtual void translation(const Vecteur2D&);
 
 	// VOIR POUR SURCHARGES OPERATEUR ET AFFICHAGE
 };

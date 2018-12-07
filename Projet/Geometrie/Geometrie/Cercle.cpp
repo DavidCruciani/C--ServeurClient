@@ -32,7 +32,7 @@ ostream & operator <<(ostream & os, const Cercle & c) {
 	return os;
 }
 
-Simple* Cercle::cloner() const { 
+FormeGeometrique* Cercle::cloner() const { 
 	return new Cercle(*this); 
 }
 
