@@ -5,6 +5,7 @@
 #include "Vecteur2D.h"
 #include <string>
 using namespace std;
+class Dessin;
 
 class FormeGeometrique
 {
@@ -19,9 +20,10 @@ public:
 	void setCouleur(const string);
 	string getCouleur() const;
 
-	virtual void dessiner() = 0;
+	virtual void dessiner(const Dessin&) = 0;
 	virtual double getAire() const = 0;
 	virtual FormeGeometrique* cloner() const = 0;
+	virtual operator string()const = 0;
 	//Transformations géométrique sur la forme
 	virtual void homothetie(const Vecteur2D&, const double) = 0;
 	virtual void rotation(const Vecteur2D&, const double) = 0;

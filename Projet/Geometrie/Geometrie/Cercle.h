@@ -1,5 +1,6 @@
 #pragma once
 #include "Simple.h"
+#include "Dessin.h"
 
 using namespace std; 
 
@@ -28,7 +29,7 @@ public:
 
 	virtual double getAire()const;
 
-	virtual void dessiner();
+	virtual void dessiner(const Dessin&);
 
 	//Transformations géométrique sur la forme
 	virtual void homothetie(const Vecteur2D&, const double);

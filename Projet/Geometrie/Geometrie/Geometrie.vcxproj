@@ -117,6 +117,9 @@
   <ItemGroup>
     <ClInclude Include="Cercle.h" />
     <ClInclude Include="Composee.h" />
+    <ClInclude Include="Connexion.h" />
+    <ClInclude Include="Dessin.h" />
+    <ClInclude Include="Erreur.h" />
     <ClInclude Include="FormeGeometrique.h" />
     <ClInclude Include="Matrice.h" />
     <ClInclude Include="Polygone.h" />
@@ -128,6 +131,9 @@
   <ItemGroup>
     <ClCompile Include="Cercle.cpp" />
     <ClCompile Include="Composee.cpp" />
+    <ClCompile Include="Connexion.cpp" />
+    <ClCompile Include="Dessin.cpp" />
+    <ClCompile Include="Erreur.cpp" />
     <ClCompile Include="FormeGeometrique.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Matrice.cpp" />

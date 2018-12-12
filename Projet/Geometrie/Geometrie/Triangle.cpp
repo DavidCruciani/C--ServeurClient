@@ -1,4 +1,5 @@
 #include "Triangle.h"
+#include "Dessin.h"
 
 Triangle::Triangle():Simple(), v1(0,0), v2(0,0), v3(0,0) {}
 
@@ -69,8 +70,8 @@ FormeGeometrique* Triangle::cloner() const {
 	return new Triangle(*this);
 }
 
-void Triangle::dessiner() {
-
+void Triangle::dessiner(const Dessin& d) {
+	d.dessiner(*this);
 }
 
 void Triangle::homothetie(const Vecteur2D &p, const double zoom) {}
@@ -96,9 +97,9 @@ void Triangle::translation(const Vecteur2D &pos) {
 	v3 = v3 + pos;
 }
 
-FormeGeometrique* Triangle::homothetie2(const Vecteur2D &p, const double zoom) { 
+/*FormeGeometrique* Triangle::homothetie2(const Vecteur2D &p, const double zoom) { 
 	//A VOIR COMMENT FAIRE
-}
+}*/
 
 FormeGeometrique* Triangle::rotation2(const Vecteur2D &centre, const double a) {
 	//Rotation V1

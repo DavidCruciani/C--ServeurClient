@@ -24,7 +24,8 @@ public:
 	virtual double getAire() const;
 	
 	virtual FormeGeometrique* cloner() const;
-	virtual void dessiner();
+	virtual void dessiner(const Dessin&);
+	operator string()const;
 	
 	//Transformations géométrique sur la forme
 	virtual void homothetie(const Vecteur2D&, const double);

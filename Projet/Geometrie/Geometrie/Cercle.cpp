@@ -2,7 +2,7 @@
 
 Cercle::Cercle():Simple("Noir"),vCentre(0,0),rayon(0){}
 
-Cercle::Cercle(const Cercle &c):Simple(c.couleur), vCentre(c.vCentre.x, c.vCentre.y) {}
+Cercle::Cercle(const Cercle &c):Simple(c.couleur), vCentre(c.vCentre.x, c.vCentre.y),rayon(c.rayon) {}
 
 Cercle::~Cercle(){}
 
@@ -56,8 +56,8 @@ double Cercle::getAire() const{
 	return rayon * rayon* 3.141592653589;
 }
 
-void Cercle::dessiner() {
-	//A  VOIR COMMENT FAIRE
+void Cercle::dessiner(const Dessin& d) {
+	d.dessiner(*this);
 }
 
 void Cercle::homothetie(const Vecteur2D&, const double zoom) {
@@ -72,9 +72,9 @@ void Cercle::translation(const Vecteur2D &pos) {
 	vCentre = vCentre + pos;
 }
 
-FormeGeometrique* Cercle::homothetie2(const Vecteur2D &p, const double zoom) {
+/*FormeGeometrique* Cercle::homothetie2(const Vecteur2D &p, const double zoom) {
 	//A VOIR COMMENT FAIRE
-}
+}*/
 
 FormeGeometrique * Cercle::rotation2(const Vecteur2D &centre, const double angle) {
 	//Aucune rotation sur un cercle, donc création d'un nouveau cercle avec les mêmes données

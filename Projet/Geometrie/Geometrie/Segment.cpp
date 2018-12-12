@@ -1,4 +1,5 @@
 #include "Segment.h"
+#include "Dessin.h"
 
 Segment::Segment():Simple("Noir"), v1(0, 0), v2(0, 0) {}
 
@@ -47,8 +48,8 @@ double Segment::getAire() const {
 FormeGeometrique* Segment::cloner() const {
 	return new Segment(*this);
 }
-void Segment::dessiner() {
-	//A  VOIR COMMENT FAIRE
+void Segment::dessiner(const Dessin& d) {
+	d.dessiner(*this);
 }
 
 void Segment::homothetie(const Vecteur2D &p, const double zoom) {
@@ -71,9 +72,9 @@ void Segment::translation(const Vecteur2D &pos) {
 	v2 = v2 + pos;	
 }
 
-FormeGeometrique* Segment::homothetie2(const Vecteur2D &p, const double zoom) {
+/*FormeGeometrique* Segment::homothetie2(const Vecteur2D &p, const double zoom) {
 	//A VOIR COMMENT FAIRE
-}
+}*/
 
 FormeGeometrique* Segment::rotation2(const Vecteur2D &centre, const double a) {
 	Vecteur2D origine = Vecteur2D(v1.x - centre.x, v1.y - centre.y);
