@@ -22,9 +22,14 @@ public:
 	virtual void dessiner() = 0;
 	virtual double getAire() const = 0;
 	virtual FormeGeometrique* cloner() const = 0;
+	//Transformations géométrique sur la forme
 	virtual void homothetie(const Vecteur2D&, const double) = 0;
 	virtual void rotation(const Vecteur2D&, const double) = 0;
 	virtual void translation(const Vecteur2D&) = 0;
+	//Transformations géométriques par copie
+	virtual FormeGeometrique* homothetie2(const Vecteur2D&, const double) = 0;
+	virtual FormeGeometrique* rotation2(const Vecteur2D&, const double) = 0;
+	virtual FormeGeometrique* translation2(const Vecteur2D&) = 0;
 
 	// VOIR POUR SURCHARGES OPERATEUR ET AFFICHAGE
 };

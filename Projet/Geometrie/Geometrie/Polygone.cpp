@@ -60,7 +60,13 @@ void Polygone::dessiner() {
 
 void Polygone::homothetie(const Vecteur2D &p, const double zoom) {}
 
-void Polygone::rotation(const Vecteur2D &centre, const double angle) {}
+void Polygone::rotation(const Vecteur2D &centre, const double a) {
+	for (int i = 0; i < listePoints.size; i++) {
+		Vecteur2D origine = Vecteur2D(listePoints[i]->x - centre.x, listePoints[i]->y - centre.y);
+		listePoints[i]->x = centre.x + (origine.x * COS(a) - origine.y * SIN(a));
+		listePoints[i]->y = centre.y + (origine.x * SIN(a) - origine.y * COS(a));
+	}
+}
 
 void Polygone::translation(const Vecteur2D &p) {}
 

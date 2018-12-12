@@ -75,10 +75,50 @@ void Triangle::dessiner() {
 
 void Triangle::homothetie(const Vecteur2D &p, const double zoom) {}
 
-void Triangle::rotation(const Vecteur2D &centre, const double a) {}
+void Triangle::rotation(const Vecteur2D &centre, const double a) {
+	//Rotation V1
+	Vecteur2D origine = Vecteur2D(v1.x - centre.x, v1.y - centre.y);
+	v1.x = centre.x + (origine.x * COS(a) - origine.y * SIN(a));
+	v1.y = centre.y + (origine.x * SIN(a) - origine.y * COS(a));
+	//Rotation V2
+	origine = Vecteur2D(v2.x - centre.x, v2.y - centre.y);
+	v2.x = centre.x + (origine.x * COS(a) - origine.y * SIN(a));
+	v2.y = centre.y + (origine.x * SIN(a) - origine.y * COS(a));
+	//Rotation V3
+	origine = Vecteur2D(v3.x - centre.x, v3.y - centre.y);
+	v3.x = centre.x + (origine.x * COS(a) - origine.y * SIN(a));
+	v3.y = centre.y + (origine.x * SIN(a) - origine.y * COS(a));
+}
 
 void Triangle::translation(const Vecteur2D &pos) {
 	v1 = v1 + pos;
 	v2 = v2 + pos;
 	v3 = v3 + pos;
+}
+
+FormeGeometrique* Triangle::homothetie2(const Vecteur2D &p, const double zoom) { 
+	//A VOIR COMMENT FAIRE
+}
+
+FormeGeometrique* Triangle::rotation2(const Vecteur2D &centre, const double a) {
+	//Rotation V1
+	Vecteur2D origine = Vecteur2D(v1.x - centre.x, v1.y - centre.y);
+	double x1 = centre.x + (origine.x * COS(a) - origine.y * SIN(a));
+	double y1 = centre.y + (origine.x * SIN(a) - origine.y * COS(a));
+	//Rotation V2
+	origine = Vecteur2D(v2.x - centre.x, v2.y - centre.y);
+	double x2 = centre.x + (origine.x * COS(a) - origine.y * SIN(a));
+	double y2 = centre.y + (origine.x * SIN(a) - origine.y * COS(a));
+	//Rotation V3
+	origine = Vecteur2D(v3.x - centre.x, v3.y - centre.y);
+	double x3 = centre.x + (origine.x * COS(a) - origine.y * SIN(a));
+	double y3 = centre.y + (origine.x * SIN(a) - origine.y * COS(a));
+	return new Triangle(couleur, x1, y1, x2, y2, x3, y3);
+}
+
+FormeGeometrique* Triangle::translation2(const Vecteur2D &pos) {
+	Vecteur2D p1 = v1 + pos;
+	Vecteur2D p2 = v2 + pos;
+	Vecteur2D p3 = v3 + pos;
+	return new Triangle(couleur, p1.x, p1.y, p2.x, p2.y, p3.x, p3.y);
 }

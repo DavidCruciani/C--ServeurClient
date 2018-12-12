@@ -118,6 +118,7 @@
     <ClInclude Include="Cercle.h" />
     <ClInclude Include="Composee.h" />
     <ClInclude Include="FormeGeometrique.h" />
+    <ClInclude Include="Matrice.h" />
     <ClInclude Include="Polygone.h" />
     <ClInclude Include="Segment.h" />
     <ClInclude Include="Simple.h" />
@@ -129,6 +130,7 @@
     <ClCompile Include="Composee.cpp" />
     <ClCompile Include="FormeGeometrique.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Matrice.cpp" />
     <ClCompile Include="Polygone.cpp" />
     <ClCompile Include="Segment.cpp" />
     <ClCompile Include="Simple.cpp" />
