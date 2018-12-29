@@ -69,7 +69,7 @@ void Cercle::rotation(const Vecteur2D &centre, const double a) {
 }
 
 void Cercle::translation(const Vecteur2D &pos) {
-	vCentre = vCentre + pos;
+	vCentre = vCentre.translation(pos);
 }
 
 /*FormeGeometrique* Cercle::homothetie2(const Vecteur2D &p, const double zoom) {
@@ -82,7 +82,7 @@ FormeGeometrique * Cercle::rotation2(const Vecteur2D &centre, const double angle
 }
 
 FormeGeometrique * Cercle::translation2(const Vecteur2D &pos) {
-	Vecteur2D centre = vCentre + pos;
+	Vecteur2D centre = vCentre.translation(pos);
 	return new Cercle(couleur, centre.x, centre.y, rayon);
 }
 

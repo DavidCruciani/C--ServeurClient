@@ -5,6 +5,10 @@
 #include<sstream>
 #include <ostream>
 #include <string>
+#include <cmath>
+
+#define SIN(x) sin(x * 3.141592653589/180) 
+#define COS(x) cos(x * 3.141592653589/180)
 
 using namespace std;
 
@@ -46,6 +50,17 @@ public:
 
 	inline const Vecteur2D operator * (const double & a) const {
 		return Vecteur2D(x*a, y*a);
+	}
+
+	inline Vecteur2D rotation(const Vecteur2D &centre, const double a) {
+		Vecteur2D origine = Vecteur2D(this->x - centre.x, this->y - centre.y);
+		double x1 = centre.x + (origine.x * COS(a) - origine.y * SIN(a));
+		double y1 = centre.y + (origine.x * SIN(a) - origine.y * COS(a));
+		return Vecteur2D(x1, y1);
+	}
+
+	inline Vecteur2D translation(const Vecteur2D &pos) {
+		return *this + pos;
 	}
 
 	/**

@@ -58,18 +58,14 @@ void Segment::homothetie(const Vecteur2D &p, const double zoom) {
 
 void Segment::rotation(const Vecteur2D &centre, const double a) {
 	//Rotation V1
-	Vecteur2D origine = Vecteur2D(v1.x - centre.x, v1.y - centre.y);
-	v1.x = centre.x + (origine.x * COS(a) - origine.y * SIN(a));
-	v1.y = centre.y + (origine.x * SIN(a) - origine.y * COS(a));
+	v1 = v1.rotation(centre, a);
 	//Rotation V2
-	origine = Vecteur2D(v2.x - centre.x, v2.y - centre.y);
-	v2.x = centre.x + (origine.x * COS(a) - origine.y * SIN(a));
-	v2.y = centre.y + (origine.x * SIN(a) - origine.y * COS(a));
+	v2 = v2.rotation(centre, a);
 }
 
 void Segment::translation(const Vecteur2D &pos) {
-	v1 = v1 + pos;
-	v2 = v2 + pos;	
+	v1 = v1.translation(pos);
+	v2 = v2.translation(pos);
 }
 
 /*FormeGeometrique* Segment::homothetie2(const Vecteur2D &p, const double zoom) {
@@ -77,18 +73,15 @@ void Segment::translation(const Vecteur2D &pos) {
 }*/
 
 FormeGeometrique* Segment::rotation2(const Vecteur2D &centre, const double a) {
-	Vecteur2D origine = Vecteur2D(v1.x - centre.x, v1.y - centre.y);
-	double x1 = centre.x + (origine.x * COS(a) - origine.y * SIN(a));
-	double y1 = centre.y + (origine.x * SIN(a) - origine.y * COS(a));
+	//Rotation V1
+	Vecteur2D p1 = v1.rotation(centre, a);
 	//Rotation V2
-	origine = Vecteur2D(v2.x - centre.x, v2.y - centre.y);
-	double x2 = centre.x + (origine.x * COS(a) - origine.y * SIN(a));
-	double y2 = centre.y + (origine.x * SIN(a) - origine.y * COS(a));
-	return new Segment(couleur, x1, y1, x2, y2);
+	Vecteur2D p2 = v2.rotation(centre, a);
+	return new Segment(couleur, p1.x, p1.y, p2.x, p2.y);
 }
 
 FormeGeometrique* Segment::translation2(const Vecteur2D &pos) {
-	Vecteur2D p1 = v1 + pos;
-	Vecteur2D p2 = v2 + pos;
+	Vecteur2D p1 = v1.translation(pos);
+	Vecteur2D p2 = v2.translation(pos);
 	return new Segment(couleur, p1.x, p1.y, p2.x, p2.y);
 }

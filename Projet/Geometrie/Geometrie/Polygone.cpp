@@ -63,13 +63,33 @@ void Polygone::homothetie(const Vecteur2D &p, const double zoom) {}
 
 void Polygone::rotation(const Vecteur2D &centre, const double a) {
 	for (int i = 0; i < listePoints.size(); i++) {
-		Vecteur2D origine = Vecteur2D(listePoints[i]->x - centre.x, listePoints[i]->y - centre.y);
-		listePoints[i]->x = centre.x + (origine.x * COS(a) - origine.y * SIN(a));
-		listePoints[i]->y = centre.y + (origine.x * SIN(a) - origine.y * COS(a));
+		listePoints[i] = &listePoints[i]->rotation(centre, a);
 	}
 }
 
-void Polygone::translation(const Vecteur2D &p) {}
+void Polygone::translation(const Vecteur2D &pos) {
+	for (int i = 0; i < listePoints.size(); i++) {
+		listePoints[i] = &listePoints[i]->translation(pos);
+	}
+}
+
+//FormeGeometrique* Polygone::homothetie2(const Vecteur2D &p, const double zoom) {}
+
+FormeGeometrique* Polygone::rotation2(const Vecteur2D &centre, const double a) {
+	Polygone *p = new Polygone(*this);
+	for (int i = 0; i < p->listePoints.size(); i++) {
+		p->listePoints[i] = &p->listePoints[i]->rotation(centre, a);
+	}
+	return p;
+}
+
+FormeGeometrique* Polygone::translation2(const Vecteur2D &pos) {
+	Polygone *p = new Polygone(*this);
+	for (int i = 0; i < p->listePoints.size(); i++) {
+		p->listePoints[i] = &p->listePoints[i]->translation(pos);
+	}
+	return p;
+}
 
 ostream& operator <<(ostream &os, const Polygone &p) {
 	os << (string)p;
