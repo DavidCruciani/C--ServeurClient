@@ -1,5 +1,4 @@
 #pragma once
-#pragma comment(lib, "ws2_32.lib") // spécifique à VISUAL C++
 
 #include <iostream>
 #include <string>

@@ -65,14 +65,14 @@ void Composee::translation(const Vecteur2D &trans) {
 	}
 }
 
-/*FormeGeometrique* Composee::homothetie2(const Vecteur2D& v, const double r) {
-
+FormeGeometrique* Composee::homothetie2(const Vecteur2D& v, const double r) {
+	return NULL;
 }
 
 FormeGeometrique* Composee::rotation2(const Vecteur2D& v, const double r) {
-
+	return NULL;
 }
 
 FormeGeometrique* Composee::translation2(const Vecteur2D& v) {
-
-}*/
+	return NULL;
+}

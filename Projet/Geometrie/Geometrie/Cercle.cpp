@@ -72,9 +72,9 @@ void Cercle::translation(const Vecteur2D &pos) {
 	vCentre = vCentre.translation(pos);
 }
 
-/*FormeGeometrique* Cercle::homothetie2(const Vecteur2D &p, const double zoom) {
-	//A VOIR COMMENT FAIRE
-}*/
+FormeGeometrique* Cercle::homothetie2(const Vecteur2D &p, const double zoom) {
+	return NULL;
+}
 
 FormeGeometrique * Cercle::rotation2(const Vecteur2D &centre, const double angle) {
 	//Aucune rotation sur un cercle, donc création d'un nouveau cercle avec les mêmes données

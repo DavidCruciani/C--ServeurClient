@@ -85,3 +85,7 @@ FormeGeometrique* Segment::translation2(const Vecteur2D &pos) {
 	Vecteur2D p2 = v2.translation(pos);
 	return new Segment(couleur, p1.x, p1.y, p2.x, p2.y);
 }
+
+FormeGeometrique* Segment::homothetie2(const Vecteur2D&, const double) {
+	return NULL;
+}
