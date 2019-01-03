@@ -14,6 +14,10 @@ int main()
 	Cercle c1(1, 2, 3);
 	Segment s1(1,2,3,4);
 	Triangle t1(2, 2, 10, 2, 8, 8), t2(-3, 1, 4, 2, 2, 5), t3(0, 0, 0, 2, 2, 0), t4(1, 1, 3, 3, 5, 1);
+	FormeGeometrique * t5 = new Triangle(2, 2, 10, 2, 8, 8);
+	Connexion* flux = new Connexion(ADRESSE_IP, PORT_SERVEUR);
+	Dessin d(flux) ;
+
 	cout << " u1 = " << u1 << endl;
 	cout << " u2 = " << u2 << endl;
 	cout << " u1 - u2 = " << u1 - u2 << endl;
@@ -37,10 +41,11 @@ int main()
 
 	cout << "aire du triangle 4: " << t4.getAire() << "\n" << endl;
 
-
-	cout <<"AB: "<< t2.getV1().norme(t1.getV2()) << endl;
+	/*cout <<"AB: "<< t2.getV1().norme(t1.getV2()) << endl;
 	cout <<"AC: "<< t2.getV1().norme(t1.getV3()) << endl;
-	cout <<"BC: "<< t2.getV2().norme(t1.getV3()) << endl;
+	cout <<"BC: "<< t2.getV2().norme(t1.getV3()) << endl;*/
+
+	t5->dessiner(d);
 
 	system("pause");
 	return EXIT_SUCCESS;
