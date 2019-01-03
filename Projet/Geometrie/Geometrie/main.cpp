@@ -1,5 +1,5 @@
 #include <iostream>
-#include <Windows.h> // Pour les accents dans la console sous Windows
+
 #include "Vecteur2D.h"
 #include "Cercle.h"
 #include "Segment.h"

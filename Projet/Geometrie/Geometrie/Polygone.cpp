@@ -73,8 +73,6 @@ void Polygone::translation(const Vecteur2D &pos) {
 	}
 }
 
-//FormeGeometrique* Polygone::homothetie2(const Vecteur2D &p, const double zoom) {}
-
 FormeGeometrique* Polygone::rotation2(const Vecteur2D &centre, const double a) {
 	Polygone *p = new Polygone(*this);
 	for (int i = 0; i < p->listePoints.size(); i++) {
@@ -90,6 +88,10 @@ FormeGeometrique* Polygone::translation2(const Vecteur2D &pos) {
 	}
 	return p;
 }
+
+FormeGeometrique* Polygone::homothetie2(const Vecteur2D&, const double) {
+	return NULL;
+ }
 
 ostream& operator <<(ostream &os, const Polygone &p) {
 	os << (string)p;

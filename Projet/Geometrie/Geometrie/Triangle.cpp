@@ -111,3 +111,7 @@ FormeGeometrique* Triangle::translation2(const Vecteur2D &pos) {
 	Vecteur2D p3 = v3.translation(pos);
 	return new Triangle(couleur, p1.x, p1.y, p2.x, p2.y, p3.x, p3.y);
 }
+
+FormeGeometrique* Triangle::homothetie2(const Vecteur2D&, const double) {
+	return NULL;
+}
