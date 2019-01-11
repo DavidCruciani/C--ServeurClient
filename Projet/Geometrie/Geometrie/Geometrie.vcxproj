@@ -126,7 +126,11 @@
     <ClInclude Include="Polygone.h" />
     <ClInclude Include="Segment.h" />
     <ClInclude Include="Simple.h" />
+    <ClInclude Include="TraitementCercle.h" />
     <ClInclude Include="TraitementForme.h" />
+    <ClInclude Include="TraitementPolygone.h" />
+    <ClInclude Include="TraitementSegment.h" />
+    <ClInclude Include="TraitementTriangle.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="Vecteur2D.h" />
   </ItemGroup>
@@ -142,7 +146,11 @@
     <ClCompile Include="Polygone.cpp" />
     <ClCompile Include="Segment.cpp" />
     <ClCompile Include="Simple.cpp" />
+    <ClCompile Include="TraitementCercle.cpp" />
     <ClCompile Include="TraitementForme.cpp" />
+    <ClCompile Include="TraitementPolygone.cpp" />
+    <ClCompile Include="TraitementSegment.cpp" />
+    <ClCompile Include="TraitementTriangle.cpp" />
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="Vecteur2D.cpp" />
   </ItemGroup>

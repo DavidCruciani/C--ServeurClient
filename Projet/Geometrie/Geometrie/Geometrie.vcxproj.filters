@@ -13,30 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Formes">
+      <UniqueIdentifier>{21b9c279-3861-4936-9764-db18e7a34d58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Formes">
+      <UniqueIdentifier>{51623c56-1a3c-4ff8-b269-ef4729ed33fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Traitement">
+      <UniqueIdentifier>{99789692-1d2a-4688-abf1-5a13ecd8b25c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Traitement">
+      <UniqueIdentifier>{6d91fb3c-ef2b-4179-bba3-12522f86618d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FormeGeometrique.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Composee.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Simple.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Segment.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="Vecteur2D.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Cercle.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Triangle.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Polygone.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Matrice.h">
@@ -51,33 +42,48 @@
     <ClInclude Include="Erreur.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="Cercle.h">
+      <Filter>Fichiers d%27en-tête\Formes</Filter>
+    </ClInclude>
+    <ClInclude Include="Composee.h">
+      <Filter>Fichiers d%27en-tête\Formes</Filter>
+    </ClInclude>
+    <ClInclude Include="FormeGeometrique.h">
+      <Filter>Fichiers d%27en-tête\Formes</Filter>
+    </ClInclude>
+    <ClInclude Include="Simple.h">
+      <Filter>Fichiers d%27en-tête\Formes</Filter>
+    </ClInclude>
+    <ClInclude Include="Polygone.h">
+      <Filter>Fichiers d%27en-tête\Formes</Filter>
+    </ClInclude>
+    <ClInclude Include="Segment.h">
+      <Filter>Fichiers d%27en-tête\Formes</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle.h">
+      <Filter>Fichiers d%27en-tête\Formes</Filter>
+    </ClInclude>
     <ClInclude Include="TraitementForme.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\Traitement</Filter>
+    </ClInclude>
+    <ClInclude Include="TraitementSegment.h">
+      <Filter>Fichiers d%27en-tête\Traitement</Filter>
+    </ClInclude>
+    <ClInclude Include="TraitementTriangle.h">
+      <Filter>Fichiers d%27en-tête\Traitement</Filter>
+    </ClInclude>
+    <ClInclude Include="TraitementCercle.h">
+      <Filter>Fichiers d%27en-tête\Traitement</Filter>
+    </ClInclude>
+    <ClInclude Include="TraitementPolygone.h">
+      <Filter>Fichiers d%27en-tête\Traitement</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FormeGeometrique.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Simple.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Vecteur2D.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Composee.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Segment.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Cercle.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Triangle.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Polygone.cpp">
@@ -95,8 +101,38 @@
     <ClCompile Include="Erreur.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Cercle.cpp">
+      <Filter>Fichiers sources\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="Composee.cpp">
+      <Filter>Fichiers sources\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="FormeGeometrique.cpp">
+      <Filter>Fichiers sources\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="Simple.cpp">
+      <Filter>Fichiers sources\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="Segment.cpp">
+      <Filter>Fichiers sources\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="Triangle.cpp">
+      <Filter>Fichiers sources\Formes</Filter>
+    </ClCompile>
     <ClCompile Include="TraitementForme.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Traitement</Filter>
+    </ClCompile>
+    <ClCompile Include="TraitementSegment.cpp">
+      <Filter>Fichiers sources\Traitement</Filter>
+    </ClCompile>
+    <ClCompile Include="TraitementTriangle.cpp">
+      <Filter>Fichiers sources\Traitement</Filter>
+    </ClCompile>
+    <ClCompile Include="TraitementCercle.cpp">
+      <Filter>Fichiers sources\Traitement</Filter>
+    </ClCompile>
+    <ClCompile Include="TraitementPolygone.cpp">
+      <Filter>Fichiers sources\Traitement</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
