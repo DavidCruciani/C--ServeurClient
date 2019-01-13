@@ -38,7 +38,8 @@ FormeGeometrique* Cercle::cloner() const {
 
 Cercle::operator string() const{
 	ostringstream oss;
-	oss << "Cercle[couleur: " << couleur << ", centre: " << vCentre << ", rayon: " << rayon << "]";
+	//oss << "Cercle[couleur: " << couleur << ", centre: " << vCentre << ", rayon: " << rayon << "]";
+	oss << "Cercle :" << vCentre << " " << rayon << "\n";
 	return oss.str();
 }
 

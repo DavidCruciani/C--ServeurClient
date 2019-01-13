@@ -10,16 +10,14 @@ class FormeGeometrique;
 
 class Dessin
 {
-private:
-	Connexion* connexion;
 public:
-	Dessin(Connexion *);
+	Dessin();
 	virtual ~Dessin();
 
-	void dessinerCercle(const Cercle &)const;
+	/*void dessinerCercle(const Cercle &)const;
 	void dessinerTriangle(const Triangle &)const;
 	void dessinerSegment(const Segment &)const;
-	void dessinerPolygone(const Polygone &)const;
+	void dessinerPolygone(const Polygone &)const;*/
 
 	void dessiner(const FormeGeometrique& )const;
 };

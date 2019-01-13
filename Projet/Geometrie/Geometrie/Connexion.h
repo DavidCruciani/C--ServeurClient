@@ -10,7 +10,7 @@
 
 using namespace std;
 
-#define ADRESSE_IP "127.0.0.1"
+#define ADRESSE_IP "192.168.56.1"
 #define PORT_SERVEUR 9111
 
 const static int L = 200;
@@ -25,6 +25,7 @@ static int active = 0;
 class Connexion {
 private:
 	SOCKET sock;
+	static Connexion *singlCo;
 
 public:
 
@@ -49,4 +50,5 @@ public:
 	*/
 	string recevoir() const;
 
+	static Connexion* getSinglCo();
 };

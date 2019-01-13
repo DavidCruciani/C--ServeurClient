@@ -38,6 +38,6 @@ public:
 	virtual FormeGeometrique* rotation2(const Vecteur2D&, const double);
 	virtual FormeGeometrique* translation2(const Vecteur2D&);
 
-	friend ostream & operator <<(ostream & os, const Triangle & );
+	//friend ostream & operator <<(ostream & os, const Triangle & );
 };
 #endif

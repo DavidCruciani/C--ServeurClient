@@ -6,21 +6,17 @@
 #include "FormeGeometrique.h"
 
 
-Dessin::Dessin(Connexion* c):connexion(c)
-{}
+Dessin::Dessin(){}
 
 
-Dessin::~Dessin()
-{
-	delete(connexion);
-}
+Dessin::~Dessin(){}
 
-void Dessin::dessinerCercle(const Cercle& c) const{
+/*void Dessin::dessinerCercle(const Cercle& c) const{
 	string message = (string)c;
 	cout << message;
-	connexion->envoyer(message.c_str());
+	Connexion::getSinglCo()->envoyer(message.c_str());
 
-	message.assign(connexion->recevoir());
+	message.assign(Connexion::getSinglCo()->recevoir());
 }
 
 void Dessin::dessinerSegment(const Segment& s)const {
@@ -45,13 +41,13 @@ void Dessin::dessinerPolygone(const Polygone& p)const {
 	connexion->envoyer(message.c_str());
 
 	message.assign(connexion->recevoir());
-}
+}*/
 
 void Dessin::dessiner(const FormeGeometrique& f)const {
-	string message = (string)f;
+	string message = string(f);
 	cout << message;
-	connexion->envoyer(message.c_str());
+	Connexion::getSinglCo()->envoyer(message.c_str());
 
-	message.assign(connexion->recevoir());
+	message.assign(Connexion::getSinglCo()->recevoir());
 	cout << message;
 }

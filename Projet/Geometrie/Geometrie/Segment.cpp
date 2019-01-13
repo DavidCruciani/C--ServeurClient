@@ -36,7 +36,8 @@ ostream & operator <<(ostream & os, const Segment & s) {
 
 Segment::operator string() const {
 	ostringstream oss;
-	oss << "Segment[couleur: " << couleur << ", Point 1: " << v1 << ", Point 2: " << v2 << "]";
+	//oss << "Segment[couleur: " << couleur << ", Point 1: " << v1 << ", Point 2: " << v2 << "]";
+	oss << "Segment :" << v1 << " " << v2 << "\n";
 	return oss.str();
 }
 

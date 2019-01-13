@@ -39,10 +39,14 @@ const Vecteur2D* Polygone::operator[](const int index) const {
 
 Polygone::operator string() const {
 	ostringstream oss;
-	oss << "Polygone[couleur: " << couleur << endl;
+	/*oss << "Polygone[couleur: " << couleur << endl;
 	for (int i = 0; i < listePoints.size(); i++) 
 		oss << "Point n°" << i + 1 << " " << listePoints[i] << endl;
-	oss << "]" << endl;
+	oss << "]" << endl;*/
+	oss << "Polygone :" << endl;
+	for (int i = 0; i < listePoints.size(); i++)
+		oss << listePoints[i] << " " << endl;
+	oss << "\n" << endl;
 	return oss.str();
 }
 
@@ -56,7 +60,7 @@ FormeGeometrique* Polygone::cloner() const {
 }
 
 void Polygone::dessiner(const Dessin& d) {
-
+	d.dessiner(*this);
 }
 
 void Polygone::homothetie(const Vecteur2D &p, const double zoom) {}

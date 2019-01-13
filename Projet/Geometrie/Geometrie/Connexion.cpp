@@ -2,6 +2,17 @@
 
 #pragma comment(lib, "ws2_32.lib") // spécifique à VISUAL C++
 
+
+Connexion* Connexion::singlCo = NULL;
+
+Connexion * Connexion::getSinglCo() {
+
+	if (singlCo == NULL)
+		singlCo = new Connexion(ADRESSE_IP, PORT_SERVEUR);
+
+	return singlCo;
+}
+
 Connexion::Connexion(const char* adresseIP, short portServeur)
 {
 	try {
