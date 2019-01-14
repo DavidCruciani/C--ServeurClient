@@ -7,8 +7,24 @@ Polygone::Polygone(const string c):Simple(c) {}
 
 Polygone::Polygone(const Polygone &p):Simple(p.couleur) {}
 
+Polygone::Polygone(Vecteur2D* v1, Vecteur2D* v2, Vecteur2D* v3, Vecteur2D* v4) {
+	addPoint(v1); addPoint(v2); addPoint(v3); addPoint(v4);
+}
+
 Polygone::~Polygone() {
 	listePoints.erase(listePoints.begin(), listePoints.end());
+}
+
+vector<Vecteur2D*> Polygone::getListe() const {
+	return listePoints;
+}
+
+int Polygone::getPts()const {
+	return nbPts;
+}
+
+void Polygone::setPts(int n) {
+	nbPts = n;
 }
 
 void Polygone::addPoint(Vecteur2D *p) {
@@ -19,6 +35,7 @@ void Polygone::addPoint(Vecteur2D *p) {
 	if (!false) {
 		listePoints.push_back(p);
 	}
+	setPts(getPts() + 1);
 }
 
 void Polygone::delPoint(const Vecteur2D *p) {
@@ -43,9 +60,13 @@ Polygone::operator string() const {
 	for (int i = 0; i < listePoints.size(); i++) 
 		oss << "Point n°" << i + 1 << " " << listePoints[i] << endl;
 	oss << "]" << endl;*/
-	oss << "Polygone :" << endl;
-	for (int i = 0; i < listePoints.size(); i++)
-		oss << listePoints[i] << " " << endl;
+	oss << "Polygone :" << getPts() << " ";
+	for (int i = 0; i < listePoints.size(); i++) {
+		if (i == listePoints.size())
+			oss << *listePoints[i];
+		else
+			oss << *listePoints[i] << " ";
+	}
 	oss << "\n" << endl;
 	return oss.str();
 }

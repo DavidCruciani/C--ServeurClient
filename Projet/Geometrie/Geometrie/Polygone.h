@@ -9,11 +9,17 @@ class Polygone : public Simple
 {
 private:
 	vector<Vecteur2D*> listePoints;
+	int nbPts=0;
 public:
 	Polygone();
 	Polygone(const string);
 	Polygone(const Polygone&);
+	Polygone(Vecteur2D*, Vecteur2D*, Vecteur2D*, Vecteur2D*);
 	~Polygone();
+
+	vector<Vecteur2D*> getListe() const;
+	int getPts() const;
+	void setPts(int) ;
 
 	void addPoint(Vecteur2D*);
 	void delPoint(const Vecteur2D*);
