@@ -30,7 +30,15 @@ public:
 	 * DONNEES : s respectant le format "(  nombre réel, nombre réel)"
 	 *
 	 * */
-	inline Vecteur2D(const char * s);
+	inline Vecteur2D(const string s) 
+	{
+		double _x, _y;
+		if (sscanf_s(s.c_str(), "(%lf,%lf)", &_x, &_y) != 0) {
+			x = _x;
+			y = _y;
+		}
+	}
+
 	inline const Vecteur2D operator + (const Vecteur2D & u) const
 	{
 		return Vecteur2D(x + u.x, y + u.y);
