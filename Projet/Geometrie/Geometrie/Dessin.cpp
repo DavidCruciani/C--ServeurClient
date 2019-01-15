@@ -45,6 +45,7 @@ void Dessin::dessinerPolygone(const Polygone& p)const {
 
 void Dessin::dessiner(const FormeGeometrique& f)const {
 	string message = string(f);
+	message.append("\n");
 	cout << message;
 	Connexion::getSinglCo()->envoyer(message.c_str());
 

@@ -6,6 +6,7 @@
 #include "Simple.h"
 #include <string>
 #include <vector>
+#include "Dessin.h"
 using namespace std;
 
 class Composee : public FormeGeometrique

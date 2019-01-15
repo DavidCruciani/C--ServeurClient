@@ -32,7 +32,7 @@ Vecteur2D Segment::getV2() const {
 Segment::operator string() const {
 	ostringstream oss;
 	//oss << "Segment[couleur: " << couleur << ", Point 1: " << v1 << ", Point 2: " << v2 << "]";
-	oss << "Segment :" << v1 << " " << v2 << "\n";
+	oss << "Segment :" << v1 << " " << v2 ;
 	return oss.str();
 }
 

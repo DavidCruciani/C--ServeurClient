@@ -30,9 +30,10 @@ FormeGeometrique* Composee::cloner() const {
 }
 
 void Composee::dessiner(const Dessin& d) {
-	for (int i = 0; i < groupe.size(); i++) {
+	/*for (int i = 0; i < groupe.size(); i++) {
 		groupe[i]->dessiner(d);
-	}
+	}*/
+	d.dessiner(*this);
 }
 
 double Composee::getAire() const {
@@ -45,10 +46,16 @@ double Composee::getAire() const {
 
 Composee::operator string() const {
 	ostringstream oss;
+	oss << "Compose [";
 	for (int i = 0; i < groupe.size(); i++) {
-		oss <<groupe[i];
+		if(i== groupe.size()-1)
+			oss << groupe[i];
+		else
+			oss <<groupe[i] << ";";
 	}
+	oss << "]";
 	return oss.str();
+
 }
 
 void Composee::homothetie(const Vecteur2D &p, const double zoom) {

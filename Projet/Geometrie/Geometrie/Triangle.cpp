@@ -43,7 +43,7 @@ Vecteur2D Triangle::getV3() const {
 Triangle::operator string() const {
 	ostringstream oss;
 	//oss << "Triangle[couleur: " << couleur << ", Point 1: " << v1 << ", Point 2: " << v2 << ", Point 3: " << v3 << "]";
-	oss << "Triangle :" << v1 << " " << v2 << " " << v3 << "\n";
+	oss << "Triangle :" << v1 << " " << v2 << " " << v3;
 	return oss.str();
 }
 

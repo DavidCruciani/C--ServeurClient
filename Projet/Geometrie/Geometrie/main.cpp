@@ -14,6 +14,7 @@
 #include "TraitementPolygone.h"
 #include "TraitementTriangle.h"
 #include "TraitementComposee.h"
+#include "Composee.h"
 
 using namespace std;
 int main()
@@ -27,12 +28,14 @@ int main()
 	Vecteur2D* D = new Vecteur2D(9, 3);
 	Vecteur2D* E = new Vecteur2D(4, 9);
 	Vecteur2D* F = new Vecteur2D(-3, 4);
-	FormeGeometrique *  c1=new Cercle(200, 100, 50);
-	//FormeGeometrique *  c1=new Cercle(20, 10,20);
+	//FormeGeometrique *  c1=new Cercle(200, 100, 50);
+	FormeGeometrique *  c1=new Cercle(20, 10,20);
 	FormeGeometrique * s1=new Segment(1,2,3,4);
 	Triangle t1(2, 2, 10, 2, 8, 8), t2(-3, 1, 4, 2, 2, 5), t3(0, 0, 0, 2, 2, 0), t4(1, 1, 3, 3, 5, 1);
 	FormeGeometrique * t5 = new Triangle(2, 2, 10, 2, 8, 8);
 	FormeGeometrique * p = new Polygone(A,B,C,D);
+	Composee * comp = new Composee();
+
 	Dessin *d=new Dessin() ;
 
 	cout << " u1 = " << u1 << endl;
@@ -67,22 +70,27 @@ int main()
 	//system("pause");
 
 	cout << "\n";
-	//c1->dessiner(*d);
+	c1->dessiner(*d);
 	//system("pause");
 	//this_thread::sleep_for(std::chrono::milliseconds(1500));
 	cout << "\n";
 
-	//s1->dessiner(*d);
+	s1->dessiner(*d);
 
 	
-//	p->addPoint(E);
+	//p->addPoint(E);
 	//p->addPoint(F);
 
 	//p->dessiner(*d);
 	
 
+	comp->addForme(c1);
+	comp->addForme(s1);
+	comp->addForme(t5);
+	comp->dessiner(*d);
+
 	// TEST chaine de responsabilite
-	const char* instruction;
+	/*const char* instruction;
 	TraitementForme *traitement, *segment, *cercle, *polygone, *triangle, *composee;
 	segment = new TraitementSegment(NULL);
 	cercle = new TraitementCercle(segment);
@@ -126,7 +134,7 @@ int main()
 	instruction = "Composee{=Rouge;\n*Segment(5,4,3,6)*\n*Cercle(5,9,10)*}";
 	FormeGeometrique *compo = traitement->traiter(instruction);
 	cout << "Forme attendue : Composee{ Segment(5,4,3,6), Cercle(5,9,10)}" << endl;
-	cout << "Forme obtenue ==>     " << compo << "\n\n\n" << endl;
+	cout << "Forme obtenue ==>     " << compo << "\n\n\n" << endl;*/
 	system("pause");
 	return EXIT_SUCCESS;
 }

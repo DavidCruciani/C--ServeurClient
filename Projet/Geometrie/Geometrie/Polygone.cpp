@@ -67,7 +67,6 @@ Polygone::operator string() const {
 		else
 			oss << *listePoints[i] << " ";
 	}
-	oss << "\n" << endl;
 	return oss.str();
 }
 
