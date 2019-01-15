@@ -11,8 +11,8 @@ int main()
 	cout << "essai des vecteurs 2D \n";
 
 	Vecteur2D u1(2, 3), u2(2, 3), w, v1(35, -63), u3(3, 4), u4(3, -4), v3;
-	FormeGeometrique *  c1=new Cercle(200, 100, 50);
-	//FormeGeometrique *  c1=new Cercle(10, 10, 5);
+	//FormeGeometrique *  c1=new Cercle(200, 100, 50);
+	FormeGeometrique *  c1=new Cercle(10, 10, 5);
 	Segment s1(1,2,3,4);
 	Triangle t1(2, 2, 10, 2, 8, 8), t2(-3, 1, 4, 2, 2, 5), t3(0, 0, 0, 2, 2, 0), t4(1, 1, 3, 3, 5, 1);
 	FormeGeometrique * t5 = new Triangle(2, 2, 10, 2, 8, 8);

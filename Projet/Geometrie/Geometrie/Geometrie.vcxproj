@@ -127,6 +127,7 @@
     <ClInclude Include="Segment.h" />
     <ClInclude Include="Simple.h" />
     <ClInclude Include="TraitementCercle.h" />
+    <ClInclude Include="TraitementComposee.h" />
     <ClInclude Include="TraitementForme.h" />
     <ClInclude Include="TraitementPolygone.h" />
     <ClInclude Include="TraitementSegment.h" />

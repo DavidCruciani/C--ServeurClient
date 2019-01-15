@@ -78,6 +78,9 @@
     <ClInclude Include="TraitementPolygone.h">
       <Filter>Fichiers d%27en-tête\Traitement</Filter>
     </ClInclude>
+    <ClInclude Include="TraitementComposee.h">
+      <Filter>Fichiers d%27en-tête\Traitement</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
