@@ -32,7 +32,7 @@ public:
 	virtual FormeGeometrique* homothetie2(const Vecteur2D&, const double) = 0;
 	virtual FormeGeometrique* rotation2(const Vecteur2D&, const double) = 0;
 	virtual FormeGeometrique* translation2(const Vecteur2D&) = 0;
-
 	// VOIR POUR SURCHARGES OPERATEUR ET AFFICHAGE
+	friend ostream& operator<<(ostream&, const FormeGeometrique*);
 };
 #endif

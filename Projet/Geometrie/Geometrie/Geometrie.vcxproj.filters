@@ -89,9 +89,6 @@
     <ClCompile Include="Vecteur2D.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Polygone.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="Matrice.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -135,6 +132,12 @@
       <Filter>Fichiers sources\Traitement</Filter>
     </ClCompile>
     <ClCompile Include="TraitementPolygone.cpp">
+      <Filter>Fichiers sources\Traitement</Filter>
+    </ClCompile>
+    <ClCompile Include="Polygone.cpp">
+      <Filter>Fichiers sources\Formes</Filter>
+    </ClCompile>
+    <ClCompile Include="TraitementComposee.cpp">
       <Filter>Fichiers sources\Traitement</Filter>
     </ClCompile>
   </ItemGroup>

@@ -7,6 +7,7 @@
 
 class TraitementCercle : public TraitementForme
 {
+public:
 	TraitementCercle(TraitementForme*);
 	virtual FormeGeometrique* traiter1(const char*) const;
 };

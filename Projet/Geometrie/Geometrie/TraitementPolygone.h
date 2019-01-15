@@ -6,6 +6,7 @@
 
 class TraitementPolygone : public TraitementForme
 {
+public:
 	TraitementPolygone(TraitementForme*);
 	virtual FormeGeometrique* traiter1(const char*) const;
 };

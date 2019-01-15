@@ -148,6 +148,7 @@
     <ClCompile Include="Segment.cpp" />
     <ClCompile Include="Simple.cpp" />
     <ClCompile Include="TraitementCercle.cpp" />
+    <ClCompile Include="TraitementComposee.cpp" />
     <ClCompile Include="TraitementForme.cpp" />
     <ClCompile Include="TraitementPolygone.cpp" />
     <ClCompile Include="TraitementSegment.cpp" />

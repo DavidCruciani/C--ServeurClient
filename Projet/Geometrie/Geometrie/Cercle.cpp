@@ -27,11 +27,6 @@ double Cercle::getRayon() const {
 	return rayon;
 }
 
-ostream & operator <<(ostream & os, const Cercle & c) {
-	os << (string)c;
-	return os;
-}
-
 FormeGeometrique* Cercle::cloner() const { 
 	return new Cercle(*this); 
 }

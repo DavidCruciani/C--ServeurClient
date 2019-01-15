@@ -8,8 +8,8 @@ Composee::~Composee() {
 	groupe.erase(groupe.begin(), groupe.end());
 }
 
-void Composee::addForme(const FormeGeometrique*) {
-
+void Composee::addForme(FormeGeometrique *f) {
+	groupe.push_back(f);
 }
 
 void Composee::delForme(const FormeGeometrique *f) {
@@ -19,6 +19,10 @@ void Composee::delForme(const FormeGeometrique *f) {
 
 void Composee::delForme(const int pos) {
 	groupe.erase(groupe.begin() + pos);
+}
+
+FormeGeometrique* Composee::getForme(const int pos) {
+	return groupe[pos];
 }
 
 FormeGeometrique* Composee::cloner() const {

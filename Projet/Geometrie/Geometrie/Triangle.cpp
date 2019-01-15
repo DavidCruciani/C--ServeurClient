@@ -40,11 +40,6 @@ Vecteur2D Triangle::getV3() const {
 	return v3;
 }
 
-/*ostream & operator <<(ostream & os, const Triangle & t) {
-	os << (string)t;
-	return os;
-}
-*/
 Triangle::operator string() const {
 	ostringstream oss;
 	//oss << "Triangle[couleur: " << couleur << ", Point 1: " << v1 << ", Point 2: " << v2 << ", Point 3: " << v3 << "]";

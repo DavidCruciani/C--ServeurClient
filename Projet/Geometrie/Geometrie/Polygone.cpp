@@ -7,7 +7,7 @@ Polygone::Polygone(const string c):Simple(c) {}
 
 Polygone::Polygone(const Polygone &p):Simple(p.couleur) {}
 
-Polygone::Polygone(Vecteur2D* v1, Vecteur2D* v2, Vecteur2D* v3, Vecteur2D* v4) {
+Polygone::Polygone(Vecteur2D* v1, Vecteur2D* v2, Vecteur2D* v3, Vecteur2D* v4): Simple("Noir") {
 	addPoint(v1); addPoint(v2); addPoint(v3); addPoint(v4);
 }
 

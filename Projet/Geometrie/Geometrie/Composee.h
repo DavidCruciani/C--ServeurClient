@@ -17,9 +17,10 @@ public:
 	Composee(const string);
 	~Composee();
 
-	void addForme(const FormeGeometrique*);
+	void addForme(FormeGeometrique*);
 	void delForme(const FormeGeometrique*);
 	void delForme(const int);
+	FormeGeometrique* getForme(const int);
 
 	virtual double getAire() const;
 	

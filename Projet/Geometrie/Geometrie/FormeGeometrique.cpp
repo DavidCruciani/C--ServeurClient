@@ -16,3 +16,7 @@ void FormeGeometrique::setCouleur(const string c) {
 string FormeGeometrique::getCouleur() const {
 	return couleur;
 }
+
+ostream& operator<<(ostream &os, const FormeGeometrique *f) {
+	return os << (string)(*f);
+}
