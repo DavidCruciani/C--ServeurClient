@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
-
+#include <vector>
 
 #include "Vecteur2D.h"
 #include "Cercle.h"
@@ -70,12 +70,12 @@ int main()
 	//system("pause");
 
 	cout << "\n";
-	c1->dessiner(*d);
+	//c1->dessiner(*d);
 	//system("pause");
 	//this_thread::sleep_for(std::chrono::milliseconds(1500));
 	cout << "\n";
 
-	s1->dessiner(*d);
+	//s1->dessiner(*d);
 
 	
 	//p->addPoint(E);
@@ -83,14 +83,14 @@ int main()
 
 	//p->dessiner(*d);
 	
-
+	/*
 	comp->addForme(c1);
 	comp->addForme(s1);
 	comp->addForme(t5);
-	comp->dessiner(*d);
+	comp->dessiner(*d);*/
 
 	// TEST chaine de responsabilite
-	/*const char* instruction;
+	const char* instruction;
 	TraitementForme *traitement, *segment, *cercle, *polygone, *triangle, *composee;
 	segment = new TraitementSegment(NULL);
 	cercle = new TraitementCercle(segment);
@@ -98,7 +98,7 @@ int main()
 	triangle = new TraitementTriangle(polygone);
 	composee = new TraitementComposee(triangle);
 	traitement = composee;
-	
+	/*
 	//////// CREATION Segment //////////
 	instruction = "Segment(10,15,20,26)";
 	//const char *insSegment = "(5,6,7,8);";
@@ -115,26 +115,31 @@ int main()
 	cout << "Forme obtenue ==>     " << c << "\n\n\n" << endl;
 
 	//c->dessiner(*d);
-	
+	*/
 	//////// CREATION Triangle //////////
-	instruction = "Triangle(20,10,30,25,17,43)";
+	instruction = "Triangle(20,10.5,30,25,17,30)";
 	FormeGeometrique *t = traitement->traiter(instruction);
 	cout << "Forme attendue : Triangle(20,10,30,25,17,43)\n\n" << endl;
 	cout << "Forme obtenue ==>     " << t << "\n\n\n" << endl;
+	//t->dessiner(*d);
+	t = t->rotation2(Vecteur2D(10, 10), 30);
 
 	//t->dessiner(*d);
 	
 	//////// CREATION POLYGONE //////////
-	instruction = "Polygone{\n(5,1)\n(6,7)\n(7,8)\n(4,6)}";
+	instruction = "Polygone{(5,1)(6,7)(7,8)(4,6)}";
 	FormeGeometrique *poly = traitement->traiter(instruction);
 	cout << "Forme attendue : Polygone{(5,1)(6,7)(7,8)(4,6)}\n\n" << endl;
 	cout << "Forme obtenue ==>     " << poly << "\n\n\n" << endl;
 
+	//poly->dessiner(*d);
+
+	
 	//////// CREATION Composee //////////
 	instruction = "Composee{=Rouge;\n*Segment(5,4,3,6)*\n*Cercle(5,9,10)*}";
 	FormeGeometrique *compo = traitement->traiter(instruction);
 	cout << "Forme attendue : Composee{ Segment(5,4,3,6), Cercle(5,9,10)}" << endl;
-	cout << "Forme obtenue ==>     " << compo << "\n\n\n" << endl;*/
+	cout << "Forme obtenue ==>     " << compo << "\n\n\n" << endl;
 	system("pause");
 	return EXIT_SUCCESS;
 }

@@ -25,6 +25,12 @@
     <Filter Include="Fichiers sources\Traitement">
       <UniqueIdentifier>{6d91fb3c-ef2b-4179-bba3-12522f86618d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Chargement">
+      <UniqueIdentifier>{e04e6bb3-b7b8-4a5a-91e9-329e1dff2f49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Chargement">
+      <UniqueIdentifier>{90bc7698-94ef-4650-8685-0780804657f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vecteur2D.h">
@@ -80,6 +86,12 @@
     </ClInclude>
     <ClInclude Include="TraitementComposee.h">
       <Filter>Fichiers d%27en-tête\Traitement</Filter>
+    </ClInclude>
+    <ClInclude Include="Charger.h">
+      <Filter>Fichiers d%27en-tête\Chargement</Filter>
+    </ClInclude>
+    <ClInclude Include="ChargerTxt.h">
+      <Filter>Fichiers d%27en-tête\Chargement</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +151,12 @@
     </ClCompile>
     <ClCompile Include="TraitementComposee.cpp">
       <Filter>Fichiers sources\Traitement</Filter>
+    </ClCompile>
+    <ClCompile Include="Charger.cpp">
+      <Filter>Fichiers sources\Chargement</Filter>
+    </ClCompile>
+    <ClCompile Include="ChargerTxt.cpp">
+      <Filter>Fichiers sources\Chargement</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
