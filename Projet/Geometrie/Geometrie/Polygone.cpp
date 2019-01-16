@@ -1,13 +1,13 @@
 #include "Polygone.h"
 #include "Dessin.h"
 
-Polygone::Polygone():Simple("noir") {}
+Polygone::Polygone():Simple("black") {}
 
 Polygone::Polygone(const string c):Simple(c) {}
 
 Polygone::Polygone(const Polygone &p):Simple(p.couleur) {}
 
-Polygone::Polygone(Vecteur2D* v1, Vecteur2D* v2, Vecteur2D* v3, Vecteur2D* v4): Simple("Noir") {
+Polygone::Polygone(Vecteur2D* v1, Vecteur2D* v2, Vecteur2D* v3, Vecteur2D* v4): Simple("black") {
 	addPoint(v1); addPoint(v2); addPoint(v3); addPoint(v4);
 }
 
@@ -60,7 +60,7 @@ Polygone::operator string() const {
 	for (int i = 0; i < listePoints.size(); i++) 
 		oss << "Point n°" << i + 1 << " " << listePoints[i] << endl;
 	oss << "]" << endl;*/
-	oss << "Polygone :" << getPts() << " ";
+	oss << "Polygone :" << couleur<< " "<< getPts() << " ";
 	for (int i = 0; i < listePoints.size(); i++) {
 		if (i == listePoints.size())
 			oss << *listePoints[i];

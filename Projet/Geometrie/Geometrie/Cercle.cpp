@@ -1,12 +1,12 @@
 #include "Cercle.h"
 
-Cercle::Cercle():Simple("Noir"),vCentre(0,0),rayon(0){}
+Cercle::Cercle():Simple("black"),vCentre(0,0),rayon(0){}
 
 Cercle::Cercle(const Cercle &c):Simple(c.couleur), vCentre(c.vCentre.x, c.vCentre.y),rayon(c.rayon) {}
 
 Cercle::~Cercle(){}
 
-Cercle::Cercle(const double x, const double y, const double r) : Simple("Noir"), vCentre(x,y), rayon(r){}
+Cercle::Cercle(const double x, const double y, const double r) : Simple("black"), vCentre(x,y), rayon(r){}
 
 Cercle::Cercle(const string couleur, const double x, const double y, const double r) : Simple(couleur), vCentre(x, y), rayon(r) {}
 
@@ -34,7 +34,7 @@ FormeGeometrique* Cercle::cloner() const {
 Cercle::operator string() const{
 	ostringstream oss;
 	//oss << "Cercle[couleur: " << couleur << ", centre: " << vCentre << ", rayon: " << rayon << "]";
-	oss << "Cercle :" << vCentre << " " << rayon ;
+	oss << "Cercle :" <<couleur<<" "<< vCentre << " " << rayon ;
 	return oss.str();
 }
 

@@ -9,6 +9,7 @@ Composee::~Composee() {
 }
 
 void Composee::addForme(FormeGeometrique *f) {
+	f->setCouleur(this->getCouleur());
 	groupe.push_back(f);
 }
 

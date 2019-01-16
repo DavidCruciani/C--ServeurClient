@@ -9,7 +9,7 @@ Triangle::Triangle(const string c, const double x1, const double y1, const doubl
 	:Simple(c), v1(x1,y1), v2(x2,y2), v3(x3,y3) {}
 
 Triangle::Triangle(const double x1, const double y1, const double x2, const double y2, const double x3, const double y3)
-	: Simple("Noir"), v1(x1, y1), v2(x2, y2), v3(x3, y3) {}
+	: Simple("black"), v1(x1, y1), v2(x2, y2), v3(x3, y3) {}
 
 Triangle::~Triangle() {}
 
@@ -43,7 +43,7 @@ Vecteur2D Triangle::getV3() const {
 Triangle::operator string() const {
 	ostringstream oss;
 	//oss << "Triangle[couleur: " << couleur << ", Point 1: " << v1 << ", Point 2: " << v2 << ", Point 3: " << v3 << "]";
-	oss << "Triangle :" << v1 << " " << v2 << " " << v3;
+	oss << "Triangle :" << couleur << " " << v1 << " " << v2 << " " << v3;
 	return oss.str();
 }
 

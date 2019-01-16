@@ -1,7 +1,7 @@
 #include "Segment.h"
 #include "Dessin.h"
 
-Segment::Segment():Simple("Noir"), v1(0, 0), v2(0, 0) {}
+Segment::Segment():Simple("black"), v1(0, 0), v2(0, 0) {}
 
 Segment::Segment(const Segment &s):Simple(s.couleur), v1(s.v1.x, s.v1.y), v2(s.v2.x, s.v2.y) {}
 
@@ -32,7 +32,7 @@ Vecteur2D Segment::getV2() const {
 Segment::operator string() const {
 	ostringstream oss;
 	//oss << "Segment[couleur: " << couleur << ", Point 1: " << v1 << ", Point 2: " << v2 << "]";
-	oss << "Segment :" << v1 << " " << v2 ;
+	oss << "Segment :" << couleur << " "<< v1 << " " << v2 ;
 	return oss.str();
 }
 
