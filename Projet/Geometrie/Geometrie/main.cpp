@@ -71,8 +71,10 @@ int main()
 	cout <<"BC: "<< t2.getV2().norme(t1.getV3()) << endl;
 
 	cout << "\n";
-	//t5->dessiner(*d);
-	//system("pause");
+	t5->dessiner(*d);
+	system("pause");
+	t5=t5->rotation2(Vecteur2D(2, 2), 30);
+	t5->dessiner(*d);
 
 	cout << "\n";
 	//c1->dessiner(*d);
@@ -89,10 +91,12 @@ int main()
 	p->addPoint(E);
 	p->addPoint(F);
 
-	p->dessiner(*d);
+	cout << "aire du polygone : " << p->getAire() << "\n" << endl;
+
+	//p->dessiner(*d);
 	
 	
-	comp->addForme(c1);
+	/*comp->addForme(c1);
 	comp->addForme(s1);
 	comp->addForme(t5);
 	comp->dessiner(*d);*/

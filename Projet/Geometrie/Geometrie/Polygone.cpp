@@ -71,8 +71,16 @@ Polygone::operator string() const {
 }
 
 double Polygone::getAire() const {
-	// A FAIRE
-	return 0;
+
+	double somme = 0;
+	for (int i = 0; i < listePoints.size()-1; i++) {
+
+		somme += (listePoints[i]->x*listePoints[i + 1]->y) - (listePoints[i + 1]->x*listePoints[i]->y);
+	}
+
+	somme += (listePoints.back()->x * listePoints[0]->y) - (listePoints[0]->x*listePoints.back()->y);
+
+	return somme/2;
 }
 
 FormeGeometrique* Polygone::cloner() const {
