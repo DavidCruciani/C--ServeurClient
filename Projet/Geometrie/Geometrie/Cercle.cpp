@@ -1,4 +1,5 @@
 #include "Cercle.h"
+#include "Dessin.h"
 
 Cercle::Cercle():Simple("black"),vCentre(0,0),rayon(0){}
 

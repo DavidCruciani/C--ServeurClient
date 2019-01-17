@@ -7,7 +7,7 @@ Segment::Segment(const Segment &s):Simple(s.couleur), v1(s.v1.x, s.v1.y), v2(s.v
 
 Segment::Segment(const string c, const double x1, const double y1, const double x2, const double y2):Simple(c), v1(x1, y1), v2(x2, y2) {}
 
-Segment::Segment(const double x1, const double y1, const double x2, const double y2) : Simple("Noir"), v1(x1, y1), v2(x2, y2) {}
+Segment::Segment(const double x1, const double y1, const double x2, const double y2) : Simple("black"), v1(x1, y1), v2(x2, y2) {}
 
 Segment::~Segment() {}
 

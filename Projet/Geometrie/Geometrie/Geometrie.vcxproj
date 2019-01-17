@@ -122,6 +122,7 @@
     <ClInclude Include="Composee.h" />
     <ClInclude Include="Connexion.h" />
     <ClInclude Include="Dessin.h" />
+    <ClInclude Include="DessinJava.h" />
     <ClInclude Include="Erreur.h" />
     <ClInclude Include="FormeGeometrique.h" />
     <ClInclude Include="Matrice.h" />
@@ -143,7 +144,7 @@
     <ClCompile Include="ChargerTxt.cpp" />
     <ClCompile Include="Composee.cpp" />
     <ClCompile Include="Connexion.cpp" />
-    <ClCompile Include="Dessin.cpp" />
+    <ClCompile Include="DessinJava.cpp" />
     <ClCompile Include="Erreur.cpp" />
     <ClCompile Include="FormeGeometrique.cpp" />
     <ClCompile Include="main.cpp" />

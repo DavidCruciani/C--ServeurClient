@@ -1,6 +1,5 @@
 #pragma once
 #include "Simple.h"
-#include "Dessin.h"
 
 using namespace std; 
 

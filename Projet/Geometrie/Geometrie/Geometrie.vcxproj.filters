@@ -39,9 +39,6 @@
     <ClInclude Include="Matrice.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Dessin.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="Connexion.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
@@ -93,6 +90,12 @@
     <ClInclude Include="ChargerTxt.h">
       <Filter>Fichiers d%27en-tête\Chargement</Filter>
     </ClInclude>
+    <ClInclude Include="DessinJava.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Dessin.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -102,9 +105,6 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Matrice.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Dessin.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Connexion.cpp">
@@ -157,6 +157,9 @@
     </ClCompile>
     <ClCompile Include="ChargerTxt.cpp">
       <Filter>Fichiers sources\Chargement</Filter>
+    </ClCompile>
+    <ClCompile Include="DessinJava.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
 #include "Composee.h"
+#include "Dessin.h"
 
 Composee::Composee() :FormeGeometrique() {}
 

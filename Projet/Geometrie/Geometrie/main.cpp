@@ -1,6 +1,4 @@
 #include <iostream>
-#include <chrono>
-#include <thread>
 #include <vector>
 
 #include "Vecteur2D.h"
@@ -16,6 +14,7 @@
 #include "TraitementComposee.h"
 #include "Composee.h"
 #include "ChargerTxt.h"
+#include "DessinJava.h"
 
 using namespace std;
 int main()
@@ -41,7 +40,7 @@ int main()
 
 	vector<FormeGeometrique*> liste;
 
-	Dessin *d=new Dessin() ;
+	Dessin *d=new DessinJava() ;
 
 	cout << " u1 = " << u1 << endl;
 	cout << " u2 = " << u2 << endl;

@@ -2,7 +2,7 @@
 
 #include <vector>
 #include "Simple.h"
-#include "Triangle.h"
+
 using namespace std;
 
 class Polygone : public Simple

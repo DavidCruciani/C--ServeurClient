@@ -3,6 +3,7 @@
 #define _TRIANGLE_
 
 #include "Simple.h"
+
 using namespace std;
 
 class Triangle : public Simple
