@@ -71,10 +71,10 @@ int main()
 	cout <<"BC: "<< t2.getV2().norme(t1.getV3()) << endl;
 
 	cout << "\n";
-	t5->dessiner(*d);
-	system("pause");
+	//t5->dessiner(*d);
+	//system("pause");
 	t5=t5->rotation2(Vecteur2D(2, 2), 30);
-	t5->dessiner(*d);
+	//t5->dessiner(*d);
 
 	cout << "\n";
 	//c1->dessiner(*d);
@@ -117,8 +117,9 @@ int main()
 	charger = txt;
 	liste = charger->charge(fichier, traitement);
 	cout << " Affichage formes fichier\n\n";
-	/*for (int i = 0; i < liste.size(); i++)
-		liste[i]->dessiner(*d);*/
+	for (int i = 0; i < liste.size(); i++)
+		//cout << liste[i]<<"\n";
+		liste[i]->dessiner(*d);
 	                                 
 	//////// CREATION Segment //////////
 	instruction = "Segment(10,15,20,26)";
@@ -127,7 +128,7 @@ int main()
 	cout << "Forme attendue : Segment (10,15,20,26)\n\n" << endl;
 	cout << "Forme obtenue ==>     " << s << "\n\n\n" << endl;
 
-	s->dessiner(*d);
+	//s->dessiner(*d);
 	/*
 	//////// CREATION CERCLE //////////
 	instruction = "Cercle(11,20,30)=cyan";
