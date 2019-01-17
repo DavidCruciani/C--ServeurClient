@@ -86,13 +86,15 @@ int main()
 	p->addPoint(E);
 	p->addPoint(F);
 
-	p->dessiner(*d);
+	cout << "aire du polygone : " << p->getAire() << "\n" << endl;
+
+	//p->dessiner(*d);
 	
 	
-	comp->addForme(c1);
+	/*comp->addForme(c1);
 	comp->addForme(s1);
 	comp->addForme(t5);
-	comp->dessiner(*d);
+	comp->dessiner(*d);*/
 
 	// TEST chaine de responsabilite
 	/*const char* instruction;
