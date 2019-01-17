@@ -15,6 +15,7 @@
 #include "Composee.h"
 #include "ChargerTxt.h"
 #include "DessinJava.h"
+#include "SauvegarderTxt.h"
 
 using namespace std;
 int main()
@@ -126,6 +127,10 @@ int main()
 	FormeGeometrique *s = traitement->traiter(instruction);
 	cout << "Forme attendue : Segment (10,15,20,26)\n\n" << endl;
 	cout << "Forme obtenue ==>     " << s << "\n\n\n" << endl;
+
+	////////Sauvegarde//////////
+	Sauvegarde *save = new SauvegarderTxt;
+	save->sauvegarde(s1);
 
 	//s->dessiner(*d);
 	/*

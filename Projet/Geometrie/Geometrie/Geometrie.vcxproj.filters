@@ -96,6 +96,12 @@
     <ClInclude Include="Dessin.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="Sauvegarde.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="SauvegarderTxt.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -159,6 +165,9 @@
       <Filter>Fichiers sources\Chargement</Filter>
     </ClCompile>
     <ClCompile Include="DessinJava.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SauvegarderTxt.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

@@ -127,6 +127,8 @@
     <ClInclude Include="FormeGeometrique.h" />
     <ClInclude Include="Matrice.h" />
     <ClInclude Include="Polygone.h" />
+    <ClInclude Include="Sauvegarde.h" />
+    <ClInclude Include="SauvegarderTxt.h" />
     <ClInclude Include="Segment.h" />
     <ClInclude Include="Simple.h" />
     <ClInclude Include="TraitementCercle.h" />
@@ -150,6 +152,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Matrice.cpp" />
     <ClCompile Include="Polygone.cpp" />
+    <ClCompile Include="SauvegarderTxt.cpp" />
     <ClCompile Include="Segment.cpp" />
     <ClCompile Include="Simple.cpp" />
     <ClCompile Include="TraitementCercle.cpp" />
