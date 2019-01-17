@@ -10,8 +10,8 @@
 
 using namespace std;
 
-//#define ADRESSE_IP "10.10.210.102"
-#define ADRESSE_IP "192.168.56.1"
+#define ADRESSE_IP "10.10.210.102"
+//#define ADRESSE_IP "192.168.56.1"
 #define PORT_SERVEUR 9111
 
 const static int L = 200;

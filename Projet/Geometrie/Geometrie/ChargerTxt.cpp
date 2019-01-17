@@ -1,16 +1,8 @@
 #include "ChargerTxt.h"
 
-bool ChargerTxt::charge1(const char *fichier, vector<FormeGeometrique*> liste) {
+vector<FormeGeometrique*> ChargerTxt::charge1(const char *fichier, TraitementForme *traitement) {
+	vector<FormeGeometrique*> liste;
 	if (strstr(fichier, ".txt") != NULL) {
-		//---------------------- CREATION CHAINE RESPONSABILITE ----------
-		TraitementForme *traitement, *segment, *cercle, *polygone, *triangle, *composee;
-		segment = new TraitementSegment(NULL);
-		cercle = new TraitementCercle(segment);
-		polygone = new TraitementPolygone(cercle);
-		triangle = new TraitementTriangle(polygone);
-		composee = new TraitementComposee(triangle);
-		traitement = composee;
-		//-----------------------------------------------------------------
 		ifstream fichier1(fichier, ios::in);
 		if (fichier1)  // si l'ouverture a fonctionné
 		{
@@ -22,11 +14,12 @@ bool ChargerTxt::charge1(const char *fichier, vector<FormeGeometrique*> liste) {
 			}
 
 			fichier1.close();
+			return liste;
 		}
 		//else
 			//ENVOI D'EXCEPTION ===> L'ouverture du fichier à échoué
-		return true;
+		
 	}
-	else
-		return false;
+	else 
+		return liste;
 }

@@ -15,6 +15,7 @@
 #include "TraitementTriangle.h"
 #include "TraitementComposee.h"
 #include "Composee.h"
+#include "ChargerTxt.h"
 
 using namespace std;
 int main()
@@ -37,6 +38,8 @@ int main()
 	FormeGeometrique * t5 = new Triangle(2, 2, 10, 2, 8, 8);
 	Polygone * p = new Polygone("green");
 	Composee * comp = new Composee("green");
+
+	vector<FormeGeometrique*> liste;
 
 	Dessin *d=new Dessin() ;
 
@@ -78,7 +81,7 @@ int main()
 	cout << "\n";
 
 	//s1->dessiner(*d);
-
+/*
 	p->addPoint(A);
 	p->addPoint(B);
 	p->addPoint(C);
@@ -92,10 +95,11 @@ int main()
 	comp->addForme(c1);
 	comp->addForme(s1);
 	comp->addForme(t5);
-	comp->dessiner(*d);
+	comp->dessiner(*d);*/
 
 	// TEST chaine de responsabilite
-	/*const char* instruction;
+	const char* instruction;
+	const char *fichier = "test.txt";
 	TraitementForme *traitement, *segment, *cercle, *polygone, *triangle, *composee;
 	segment = new TraitementSegment(NULL);
 	cercle = new TraitementCercle(segment);
@@ -103,7 +107,15 @@ int main()
 	triangle = new TraitementTriangle(polygone);
 	composee = new TraitementComposee(triangle);
 	traitement = composee;
-	
+	// Chaine responsabilite Chargement
+	Charger *txt, *charger;
+	txt = new ChargerTxt(NULL);
+	charger = txt;
+	liste = charger->charge(fichier, traitement);
+	cout << " Affichage formes fichier\n\n";
+	/*for (int i = 0; i < liste.size(); i++)
+		liste[i]->dessiner(*d);*/
+	                                 
 	//////// CREATION Segment //////////
 	instruction = "Segment(10,15,20,26)";
 	//const char *insSegment = "(5,6,7,8);";
@@ -111,40 +123,40 @@ int main()
 	cout << "Forme attendue : Segment (10,15,20,26)\n\n" << endl;
 	cout << "Forme obtenue ==>     " << s << "\n\n\n" << endl;
 
-	//s->dessiner(*d);
-
+	s->dessiner(*d);
+	/*
 	//////// CREATION CERCLE //////////
-	instruction = "Cercle(11,20,30)";
+	instruction = "Cercle(11,20,30)=cyan";
 	FormeGeometrique *c = traitement->traiter(instruction);
-	cout << "Forme attendue : Cercle(11,20,30)\n\n" << endl;
+	cout << "Forme attendue : Cercle=orange(11,20,30)\n\n" << endl;
 	cout << "Forme obtenue ==>     " << c << "\n\n\n" << endl;
 
-	//c->dessiner(*d);
-	*/
+	c->dessiner(*d);
+	
 	//////// CREATION Triangle //////////
-	/*instruction = "Triangle(20,10.5,30,25,17,30)";
+	instruction = "Triangle(20,10.5,30,25,17,30)";
 	FormeGeometrique *t = traitement->traiter(instruction);
 	cout << "Forme attendue : Triangle(20,10,30,25,17,43)\n\n" << endl;
 	cout << "Forme obtenue ==>     " << t << "\n\n\n" << endl;
-	//t->dessiner(*d);
-	t = t->rotation2(Vecteur2D(10, 10), 30);
-
-	//t->dessiner(*d);
+	t->dessiner(*d);
 	
 	//////// CREATION POLYGONE //////////
-	instruction = "Polygone{(5,1)(6,7)(7,8)(4,6)}";
+	instruction = "Polygone{=green(5,1)(6,7)(7,8)(4,6)}";
 	FormeGeometrique *poly = traitement->traiter(instruction);
 	cout << "Forme attendue : Polygone{(5,1)(6,7)(7,8)(4,6)}\n\n" << endl;
 	cout << "Forme obtenue ==>     " << poly << "\n\n\n" << endl;
 
-	//poly->dessiner(*d);
+	poly->dessiner(*d);
 
 	
 	//////// CREATION Composee //////////
-	instruction = "Composee{=Rouge;\n*Segment(5,4,3,6)*\n*Cercle(5,9,10)*}";
+	instruction = "Composee{=red;*Segment(5,4,3,6)**Cercle(5,9,10)*}";
 	FormeGeometrique *compo = traitement->traiter(instruction);
 	cout << "Forme attendue : Composee{ Segment(5,4,3,6), Cercle(5,9,10)}" << endl;
-	cout << "Forme obtenue ==>     " << compo << "\n\n\n" << endl;*/
+	cout << "Forme obtenue ==>     " << compo << "\n\n\n" << endl;
+
+	compo->dessiner(*d);*/
+
 	system("pause");
 	return EXIT_SUCCESS;
 }

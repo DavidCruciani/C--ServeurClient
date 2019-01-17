@@ -2,14 +2,20 @@
 
 Charger::Charger(Charger *s): suivant(s) {}
 
-void Charger::charge(const char *fichier, vector<FormeGeometrique*> liste) {
-	bool res = this->charge1(fichier, liste);
-	if (!res) {
+vector<FormeGeometrique*> Charger::charge(const char *fichier, TraitementForme *traitement) {
+	vector<FormeGeometrique*> liste = this->charge1(fichier, traitement);
+	if (liste.size() != 0)
+		return liste;
+	else
+	{
 		Charger *aux = this;
-		while (this->suivant != NULL && !res) {
+		while (this->suivant != NULL) {
 			aux = aux->suivant;
-			res = aux->charge1(fichier, liste);
+			liste = aux->charge1(fichier, traitement);
+			if (liste.size() > 0)
+				break;
 		}
+		return liste;
 	}
 
 }

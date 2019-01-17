@@ -8,6 +8,6 @@ class ChargerTxt :public Charger
 {
 public:
 	ChargerTxt(Charger *s): Charger(s) {}
-	virtual bool charge1(const char*, vector<FormeGeometrique *>);
+	virtual vector<FormeGeometrique*> charge1(const char*, TraitementForme*);
 };
 #endif

@@ -19,8 +19,8 @@ private:
 protected:
 	Charger(Charger*);
 public:
-	void charge(const char*, vector<FormeGeometrique*>);
+	vector<FormeGeometrique*> charge(const char*, TraitementForme*);
 protected:
-	virtual bool charge1(const char*, vector<FormeGeometrique*>) = 0;
+	virtual vector<FormeGeometrique*> charge1(const char*, TraitementForme*) = 0;
 };
 #endif

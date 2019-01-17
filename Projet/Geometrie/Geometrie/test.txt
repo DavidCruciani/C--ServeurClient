@@ -1,0 +1,4 @@
+Cercle(11,20,30)=cyan
+Triangle(20,10.5,30,25,17,30)
+Polygone{=green(5,1)(6,7)(7,8)(4,6)}
+Composee{=red;*Segment(5,4,3,6)**Cercle(5,9,10)*}
