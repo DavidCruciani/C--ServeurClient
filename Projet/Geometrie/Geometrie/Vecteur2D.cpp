@@ -12,8 +12,8 @@ Vecteur2D::operator string() const
 
 Vecteur2D Vecteur2D::homothetie(const Vecteur2D & v, double scaleFactor) const
 {
-	double x1 = v.x + ((x - v.x) * scaleFactor);
-	double y1 = v.y + ((y - v.y) * scaleFactor);
+	double x1 = v.x + ((v.x-x) * scaleFactor);
+	double y1 = v.y + ((v.y-y) * scaleFactor);
 
 	return Vecteur2D(x1, y1);
 }

@@ -12,7 +12,11 @@ Polygone::Polygone(Vecteur2D* v1, Vecteur2D* v2, Vecteur2D* v3, Vecteur2D* v4): 
 }
 
 Polygone::~Polygone() {
-	listePoints.erase(listePoints.begin(), listePoints.end());
+	for (int i = 0; i < listePoints.size(); i++) {
+
+		delete listePoints[i];
+	}
+	listePoints.clear();
 }
 
 vector<Vecteur2D*> Polygone::getListe() const {
@@ -83,7 +87,7 @@ double Polygone::getAire() const {
 	return somme/2;
 }
 
-FormeGeometrique* Polygone::cloner() const {
+Polygone* Polygone::cloner() const {
 	return new Polygone(*this);
 }
 
@@ -110,15 +114,15 @@ void Polygone::translation(const Vecteur2D &pos) {
 	}
 }
 
-FormeGeometrique* Polygone::rotation2(const Vecteur2D &centre, const double a) {
-	Polygone *p = new Polygone(*this);
+Polygone* Polygone::rotation2(const Vecteur2D &centre, const double a) {
+	Polygone *p = this->cloner();
 	for (int i = 0; i < p->listePoints.size(); i++) {
 		p->listePoints[i] = &p->listePoints[i]->rotation(centre, a);
 	}
 	return p;
 }
 
-FormeGeometrique* Polygone::translation2(const Vecteur2D &pos) {
+Polygone* Polygone::translation2(const Vecteur2D &pos) {
 	Polygone *p = new Polygone(*this);
 	for (int i = 0; i < p->listePoints.size(); i++) {
 		p->listePoints[i] = &p->listePoints[i]->translation(pos);
@@ -126,8 +130,8 @@ FormeGeometrique* Polygone::translation2(const Vecteur2D &pos) {
 	return p;
 }
 
-FormeGeometrique* Polygone::homothetie2(const Vecteur2D &p, const double zoom) {
-	Polygone *poly = new Polygone(couleur);
+Polygone* Polygone::homothetie2(const Vecteur2D &p, const double zoom) {
+	Polygone *poly = this->cloner();
 	for (int i = 0; i < listePoints.size(); i++) {
 		Vecteur2D *v = new Vecteur2D(listePoints[i]->homothetie(p, zoom));
 		poly->listePoints.push_back(v);

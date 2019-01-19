@@ -94,7 +94,7 @@ public:
 	 * Clone le polygone actuel
 	 * @return FormeGeometrique* (copie du polygone)
 	 */
-	virtual FormeGeometrique* cloner() const;
+	virtual Polygone* cloner() const;
 	/**
 	 * Envoie une requête de dessin au serveur
 	 * @param Dessin&
@@ -108,6 +108,7 @@ public:
 	 * @param double facteur de zoom
 	 */
 	virtual void homothetie(const Vecteur2D&, const double);
+
 	/**
 	 * Modifie les données du polygone en effectuant une rotation
 	 * @param Vecteur2D& point de reference de la rotation
@@ -129,18 +130,18 @@ public:
 	 * @param double facteur de zoom
 	 * @return FormeGeometrique* (polygone issu de l'homotetie)
 	 */
-	virtual FormeGeometrique* homothetie2(const Vecteur2D&, const double);
+	virtual Polygone* homothetie2(const Vecteur2D&, const double);
 	/**
 	 * Creee un nouveau polygone a partir de la rotation du polygone actuel
 	 * @param Vecteur2D& point de reference de la rotation
 	 * @param double angle de rotation (en radians)
 	 * @return FormeGeometrique* (polygone issu de la rotation)
 	 */
-	virtual FormeGeometrique* rotation2(const Vecteur2D&, const double);
+	virtual Polygone* rotation2(const Vecteur2D&, const double);
 	/**
 	 * Creee un nouveau polygone a partir de la translation du polygone actuel
 	 * @param Vecteur2D& point vecteur de translation
 	 * @return FormeGeometrique* (polygone issu de la translation)
 	 */
-	virtual FormeGeometrique* translation2(const Vecteur2D&);
+	virtual Polygone* translation2(const Vecteur2D&);
 };

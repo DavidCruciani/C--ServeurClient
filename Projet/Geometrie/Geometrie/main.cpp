@@ -23,17 +23,17 @@ int main()
 	cout << "essai des vecteurs 2D \n";
 
 	Vecteur2D u1(2, 3), u2(2, 3), w, v1(35, -63), u3(3, 4), u4(3, -4), v3;
-	Vecteur2D* A = new Vecteur2D(-9, 7);
-	Vecteur2D* B = new Vecteur2D(-2, -6); 
-	Vecteur2D* C = new Vecteur2D(8, -2);
-	Vecteur2D* D = new Vecteur2D(9, 3);
-	Vecteur2D* E = new Vecteur2D(4, 9);
-	Vecteur2D* F = new Vecteur2D(-3, 4);
+	Vecteur2D* A = new Vecteur2D(-4.5, 3.5);
+	Vecteur2D* B = new Vecteur2D(-1, -3); 
+	Vecteur2D* C = new Vecteur2D(4, -1);
+	Vecteur2D* D = new Vecteur2D(4.5, 1.5);
+	Vecteur2D* E = new Vecteur2D(2, 4.5);
+	Vecteur2D* F = new Vecteur2D(-1.5, 2);
 	//FormeGeometrique *  c1=new Cercle(200, 100, 50);
 	//FormeGeometrique *  c1=new Cercle(20, 10,20);
-	FormeGeometrique *  c1 = new Cercle("blue",20, 10, 20);
+	FormeGeometrique *  c1 = new Cercle("blue",2, 1, 2);
 	//FormeGeometrique * s1=new Segment(1,2,3,4);
-	FormeGeometrique * s1=new Segment("red",1,2,3,4);
+	FormeGeometrique * s1=new Segment("red",1,2,3,2);
 	Triangle t1(2, 2, 10, 2, 8, 8), t2(-3, 1, 4, 2, 2, 5), t3(0, 0, 0, 2, 2, 0), t4(1, 1, 3, 3, 5, 1);
 	FormeGeometrique * t5 = new Triangle(2, 2, 10, 2, 8, 8);
 	Polygone * p = new Polygone("green");
@@ -78,12 +78,17 @@ int main()
 
 	cout << "\n";
 	//c1->dessiner(*d);
+	//c1 = c1->homothetie2(Vecteur2D(2, 2), 2);
+	//c1->dessiner(*d);
 	//system("pause");
 
 	cout << "\n";
 
 	//s1->dessiner(*d);
-/*
+	//s1 = s1->homothetie2(Vecteur2D(2, 2), 2);
+	//s1->dessiner(*d);
+
+
 	p->addPoint(A);
 	p->addPoint(B);
 	p->addPoint(C);
@@ -91,10 +96,11 @@ int main()
 	p->addPoint(E);
 	p->addPoint(F);
 
-	cout << "aire du polygone : " << p->getAire() << "\n" << endl;
+	//cout << "aire du polygone : " << p->getAire() << "\n" << endl;
 
 	//p->dessiner(*d);
-	
+	p=p->rotation2(Vecteur2D(2, 2), 2);
+	p->dessiner(*d);
 	
 	/*comp->addForme(c1);
 	comp->addForme(s1);
@@ -122,7 +128,7 @@ int main()
 		//liste[i]->dessiner(*d);
 	                                 
 	//////// CREATION Segment //////////
-	instruction = "Segment(10,15,20,26)";
+	/*instruction = "Segment(10,15,20,26)";
 	//const char *insSegment = "(5,6,7,8);";
 	FormeGeometrique *s = traitement->traiter(instruction);
 	cout << "Forme attendue : Segment (10,15,20,26)\n\n" << endl;
@@ -130,7 +136,7 @@ int main()
 
 	////////Sauvegarde//////////
 	Sauvegarde *save = new SauvegarderTxt;
-	save->sauvegarde(s1);
+	save->sauvegarde(s1);*/
 
 	//s->dessiner(*d);
 	/*
@@ -143,13 +149,13 @@ int main()
 	c->dessiner(*d);
 	*/
 	//////// CREATION Triangle //////////
-	instruction = "Triangle(20,10.5,30,25,17,30)";
+	/*instruction = "Triangle(2,1,3,2,1,3)";
 	FormeGeometrique *t = traitement->traiter(instruction);
-	cout << "Forme attendue : Triangle(20,10,30,25,17,43)\n\n" << endl;
+	cout << "Forme attendue : Triangle(2,1,3,2,1,3)\n\n" << endl;
 	cout << "Forme obtenue ==>     " << t << "\n\n\n" << endl;
 	t->dessiner(*d);
-	t = t->homothetie2(Vecteur2D(5, 6), 20);
-	t->dessiner(*d);
+	t = t->homothetie2(Vecteur2D(5, 6), 2);
+	t->dessiner(*d);*/
 	/*
 	//////// CREATION POLYGONE //////////
 	instruction = "Polygone{=green(5,1)(6,7)(7,8)(4,6)}";

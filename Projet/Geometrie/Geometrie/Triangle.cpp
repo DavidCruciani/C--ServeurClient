@@ -57,10 +57,8 @@ double Triangle::getAire() const {
 	
 	norme = (norme12 + norme13 + norme23) / 2;
 
-	//return sqrt(norme*(norme - norme12)*(norme - norme13)*(norme - norme23));
 	return 0.5 * abs(((v2.x - v1.x)*(v3.y - v1.y) - (v3.x - v1.x)*(v2.y - v1.y)));
 
-	//return 0.5 * (v1.y*(v3.x-v2.x)+v3.y*(v2.x-v1.x)+v2.y*(v1.x-v3.x));
 }
 
 FormeGeometrique* Triangle::cloner() const {
@@ -96,7 +94,7 @@ FormeGeometrique* Triangle::homothetie2(const Vecteur2D &p, const double zoom) {
 	Vecteur2D _v1 = v1.homothetie(p, zoom);
 	Vecteur2D _v2 = v2.homothetie(p, zoom);
 	Vecteur2D _v3 = v3.homothetie(p, zoom);
-	return new Triangle(couleur, _v1.x, _v1.y, v2.x, v2.y, v3.x, v3.y);
+	return new Triangle(couleur, _v1.x, _v1.y, _v2.x, _v2.y, _v3.x, _v3.y);
 }
 
 FormeGeometrique* Triangle::rotation2(const Vecteur2D &centre, const double a) {

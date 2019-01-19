@@ -59,6 +59,7 @@ Connexion::~Connexion(){}
 void Connexion::init() const {
 	try {
 		//-------------- initialisation ressources librairie winsock -------------------------------
+#ifdef WIN32
 
 		WSADATA wsaData; //TODO structure contenant les données de la librairie winsock à initialiser
 		int r;
@@ -74,6 +75,8 @@ void Connexion::init() const {
 	catch (Erreur erreur) {
 		cerr << erreur << endl;
 	}
+
+#endif
 }
 
 
@@ -89,7 +92,9 @@ void Connexion::close() const {
 		r = closesocket(sock);                          // renvoie une valeur non nulle en cas d'échec. Le code d'erreur peut être obtenu par un appel à WSAGetLastError()
 		if (r) throw Erreur("La fermeture du socket a échoué");
 
+#ifdef WIN32
 		WSACleanup();
+#endif
 
 		active = 0;
 	}
