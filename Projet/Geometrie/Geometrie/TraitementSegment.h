@@ -4,6 +4,10 @@
 
 #include "TraitementForme.h"
 
+/**
+ * Créee un segment a partir d'une instruction
+ * Hérite de TraitementForme
+ */
 class TraitementSegment: public TraitementForme
 {
 public:

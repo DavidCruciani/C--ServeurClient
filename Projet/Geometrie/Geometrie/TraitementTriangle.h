@@ -4,6 +4,10 @@
 
 #include "TraitementForme.h"
 
+/**
+ * Créee un triangle a partir d'une instruction
+ * Hérite de TraitementForme
+ */
 class TraitementTriangle : public TraitementForme
 {
 public:

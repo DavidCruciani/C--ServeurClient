@@ -10,6 +10,7 @@ Composee::~Composee() {
 }
 
 void Composee::addForme(FormeGeometrique *f) {
+	//on attribue la couleur de this a f
 	f->setCouleur(this->getCouleur());
 	groupe.push_back(f);
 }
@@ -32,15 +33,13 @@ FormeGeometrique* Composee::cloner() const {
 }
 
 void Composee::dessiner(const Dessin& d) {
-	/*for (int i = 0; i < groupe.size(); i++) {
-		groupe[i]->dessiner(d);
-	}*/
 	d.dessiner(*this);
 }
 
 double Composee::getAire() const {
 	double aire = 0;
 	for (int i = 0; i < groupe.size(); i++) {
+		// on calcule la somme des aires des formes qui composent la forme composée
 		aire = aire + groupe[i]->getAire();
 	}
 	return aire;
@@ -78,14 +77,26 @@ void Composee::translation(const Vecteur2D &trans) {
 	}
 }
 
-FormeGeometrique* Composee::homothetie2(const Vecteur2D& v, const double r) {
-	return NULL;
+FormeGeometrique* Composee::homothetie2(const Vecteur2D& p, const double zoom) {
+	Composee *compo = new Composee(couleur);
+	for (int i = 0; i < groupe.size(); i++) {
+		compo->groupe.push_back(groupe[i]->homothetie2(p, zoom));
+	}
+	return compo;
 }
 
 FormeGeometrique* Composee::rotation2(const Vecteur2D& v, const double r) {
-	return NULL;
+	Composee *compo = new Composee(couleur);
+	for (int i = 0; i < groupe.size(); i++) {
+		compo->groupe.push_back(groupe[i]->rotation2(v, r));
+	}
+	return compo;
 }
 
 FormeGeometrique* Composee::translation2(const Vecteur2D& v) {
-	return NULL;
+	Composee *compo = new Composee(couleur);
+	for (int i = 0; i < groupe.size(); i++) {
+		compo->groupe.push_back(groupe[i]->translation2(v));
+	}
+	return compo;
 }
