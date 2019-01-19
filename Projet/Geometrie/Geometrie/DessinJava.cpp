@@ -1,5 +1,4 @@
 #include "DessinJava.h"
-#include "FormeGeometrique.h"
 
 #include "Connexion.h"
 
@@ -11,10 +10,11 @@ DessinJava::~DessinJava(){}
 
 void DessinJava::dessiner(const FormeGeometrique& f)const {
 	string message = string(f);
-	message.append("\n");
-	cout << message;
-	Connexion::getSinglCo()->envoyer(message.c_str());
+	message.append("\n");  //fin du message
+	cout << message; //Affichage du message qui va etre envoyé
 
-	message.assign(Connexion::getSinglCo()->recevoir());
-	cout << message;
+	Connexion::getSinglCo()->envoyer(message.c_str()); //envoi de la forme
+
+	message.assign(Connexion::getSinglCo()->recevoir());  //reception du message du serveur
+	cout << message;  //Affichage du message recu
 }
