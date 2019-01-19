@@ -2,7 +2,10 @@
 
 #include "Dessin.h"
 
-class FormeGeometrique;
+/**
+*\class DessinJava
+* \brief Design Pattern Visitor qui communique avec un serveur JAVA
+*/
 
 class DessinJava: public Dessin 
 {
