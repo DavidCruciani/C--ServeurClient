@@ -8,6 +8,10 @@
 TraitementComposee::TraitementComposee(TraitementForme *suivant): TraitementForme(suivant) {}
 
 FormeGeometrique* TraitementComposee::traiter1(const char *instruction) const {
+	// * Une instruction correcte est de la forme suivante:
+	// * "Composee{=couleur;*FORME1**FORME2* ... *FORMEn*}" 
+	// * La couleur est optionnelle
+	// * On doit créeer une seconde chaine de responsabilité pour traiter chaque forme contenue dans la forme composée
 	if (strstr(instruction, "Composee") != NULL) {
 		//---------------------- CREATION CHAINE RESPONSABILITE ----------
 		TraitementForme *traitement, *segment, *cercle, *polygone, *triangle, *composee;
@@ -22,6 +26,7 @@ FormeGeometrique* TraitementComposee::traiter1(const char *instruction) const {
 		string couleur, ins, donnee;
 		Composee *c = new Composee();
 		if (strchr(instruction, '=') != NULL) {
+			// Si la couleur est précisée 
 			couleur = strchr(instruction, '=');
 			posFin = couleur.find(";");
 			couleur = couleur.substr(1, posFin - 1);
@@ -33,6 +38,8 @@ FormeGeometrique* TraitementComposee::traiter1(const char *instruction) const {
 		i = 0;
 		posFin = ins.find("}");
 		while (posForme + 1 != posFin) {
+			// On parcours l'instruction de "{" à "}"
+			// on encadre une forme par des *
 			posDeb = ins.find("*", posForme + 1);
 			posForme = ins.find("*", posDeb + 1);
 			donnee = ins.substr(posDeb+1, posForme-posDeb-1);
@@ -42,6 +49,6 @@ FormeGeometrique* TraitementComposee::traiter1(const char *instruction) const {
 		}
 		return c;
 	}
-	else
+	else // La forme demandée n'est pas une forme composée
 		return NULL;
 }

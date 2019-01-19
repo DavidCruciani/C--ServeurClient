@@ -32,11 +32,13 @@ void Polygone::setPts(int n) {
 }
 
 void Polygone::addPoint(Vecteur2D *p) {
-	bool trouvé = false;
+	bool trouve = false;
 	for (int i = 0; i < listePoints.size(); i++)
+		//On vérifie que le point n'est pas déja dans le polygone
 		if (listePoints[i] == p)
-			trouvé = true;
-	if (!false) {
+			trouve = true;
+	if (!trouve) {
+		// le point n'ayant pas été trouvé, on l'ajoute
 		listePoints.push_back(p);
 	}
 	setPts(getPts() + 1);
@@ -60,10 +62,6 @@ const Vecteur2D* Polygone::operator[](const int index) const {
 
 Polygone::operator string() const {
 	ostringstream oss;
-	/*oss << "Polygone[couleur: " << couleur << endl;
-	for (int i = 0; i < listePoints.size(); i++) 
-		oss << "Point n°" << i + 1 << " " << listePoints[i] << endl;
-	oss << "]" << endl;*/
 	oss << "Polygone :" << couleur<< " "<< getPts() << " ";
 	for (int i = 0; i < listePoints.size(); i++) {
 		if (i == listePoints.size())

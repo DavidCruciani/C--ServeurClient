@@ -2,18 +2,18 @@
 
 vector<FormeGeometrique*> ChargerTxt::charge1(const char *fichier, TraitementForme *traitement) {
 	vector<FormeGeometrique*> liste;
-	if (strstr(fichier, ".txt") != NULL) {
+	if (strstr(fichier, ".txt") != NULL) { // on vérifie que le nom du fichier à pour extension ".txt"
 		ifstream fichier1(fichier, ios::in);
 		if (fichier1)  // si l'ouverture a fonctionné
 		{
 			string ligne;
-			while (getline(fichier1, ligne))  // tant que l'on peut mettre la ligne dans "contenu"
+			while (getline(fichier1, ligne))  // on lit toutes les lignes du fichier ( 1 ligne = 1 forme géometrique )
 			{
 				const string forme = ligne;
-				liste.push_back(traitement->traiter(ligne.c_str()));  // on l'affiche
+				liste.push_back(traitement->traiter(ligne.c_str()));  // on créee une forme géométrique avec la chaîne de responsabilité et on la stocke dans le vector
 			}
 
-			fichier1.close();
+			fichier1.close(); // on a fini de lire le fichier donc on le ferme
 			return liste;
 		}
 		//else
@@ -21,5 +21,5 @@ vector<FormeGeometrique*> ChargerTxt::charge1(const char *fichier, TraitementFor
 		
 	}
 	else 
-		return liste;
+		return liste; // format différent de ".txt" donc on retourne un vector vide
 }

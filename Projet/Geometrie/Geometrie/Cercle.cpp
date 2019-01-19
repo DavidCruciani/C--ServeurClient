@@ -1,7 +1,8 @@
 #include "Cercle.h"
 #include "Dessin.h"
 
-Cercle::Cercle():Simple("black"),vCentre(0,0),rayon(0){}
+
+Cercle::Cercle():Simple("black"),vCentre(0,0),rayon(0){} // on définit par défaut la couleur sur noir
 
 Cercle::Cercle(const Cercle &c):Simple(c.couleur), vCentre(c.vCentre.x, c.vCentre.y),rayon(c.rayon) {}
 
@@ -34,7 +35,6 @@ FormeGeometrique* Cercle::cloner() const {
 
 Cercle::operator string() const{
 	ostringstream oss;
-	//oss << "Cercle[couleur: " << couleur << ", centre: " << vCentre << ", rayon: " << rayon << "]";
 	oss << "Cercle :" <<couleur<<" "<< vCentre << " " << rayon ;
 	return oss.str();
 }
@@ -77,7 +77,7 @@ FormeGeometrique* Cercle::homothetie2(const Vecteur2D &p, const double zoom) {
 
 FormeGeometrique * Cercle::rotation2(const Vecteur2D &centre, const double angle) {
 	//Aucune rotation sur un cercle, donc création d'un nouveau cercle avec les mêmes données
-	return new Cercle(couleur, vCentre.x, vCentre.y, rayon);
+	return cloner();
 }
 
 FormeGeometrique * Cercle::translation2(const Vecteur2D &pos) {

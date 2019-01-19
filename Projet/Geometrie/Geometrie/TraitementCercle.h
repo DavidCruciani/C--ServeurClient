@@ -5,6 +5,10 @@
 #include "TraitementForme.h"
 #include "Cercle.h"
 
+/**
+ * Créee un cercle a partir d'une instruction
+ * Hérite de TraitementForme
+ */
 class TraitementCercle : public TraitementForme
 {
 public:

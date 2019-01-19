@@ -4,6 +4,10 @@
 
 #include "TraitementForme.h"
 
+/**
+ * Créee un polygone a partir d'une instruction
+ * Hérite de TraitementForme
+ */
 class TraitementPolygone : public TraitementForme
 {
 public:
