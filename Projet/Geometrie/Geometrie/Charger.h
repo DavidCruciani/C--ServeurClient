@@ -5,7 +5,7 @@
 #include <fstream>
 #include <vector>
 #include "TraitementForme.h"
-#include "TraitementSegment.h"
+#include "TraitementSegment.h" 
 #include "TraitementCercle.h"
 #include "TraitementPolygone.h"
 #include "TraitementTriangle.h"
@@ -20,6 +20,11 @@ class Charger
 private:
 	Charger *suivant;
 protected:
+	/**
+	 * Constructeur
+	 *
+	 * @param Charger* traitement suivant
+	 */
 	Charger(Charger*);
 public:
 	/**
