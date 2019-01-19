@@ -71,7 +71,11 @@ void Triangle::dessiner(const Dessin& d) {
 	d.dessiner(*this);
 }
 
-void Triangle::homothetie(const Vecteur2D &p, const double zoom) {}
+void Triangle::homothetie(const Vecteur2D &p, const double zoom) {
+	v1 = v1.homothetie(p, zoom);
+	v2 = v2.homothetie(p, zoom);
+	v3 = v3.homothetie(p, zoom);
+}
 
 void Triangle::rotation(const Vecteur2D &centre, const double a) {
 	//Rotation V1
@@ -88,9 +92,12 @@ void Triangle::translation(const Vecteur2D &pos) {
 	v3 = v3.translation(pos);
 }
 
-/*FormeGeometrique* Triangle::homothetie2(const Vecteur2D &p, const double zoom) { 
-	//A VOIR COMMENT FAIRE
-}*/
+FormeGeometrique* Triangle::homothetie2(const Vecteur2D &p, const double zoom) { 
+	Vecteur2D _v1 = v1.homothetie(p, zoom);
+	Vecteur2D _v2 = v2.homothetie(p, zoom);
+	Vecteur2D _v3 = v3.homothetie(p, zoom);
+	return new Triangle(couleur, _v1.x, _v1.y, v2.x, v2.y, v3.x, v3.y);
+}
 
 FormeGeometrique* Triangle::rotation2(const Vecteur2D &centre, const double a) {
 	//Rotation V1
@@ -107,8 +114,4 @@ FormeGeometrique* Triangle::translation2(const Vecteur2D &pos) {
 	Vecteur2D p2 = v2.translation(pos);
 	Vecteur2D p3 = v3.translation(pos);
 	return new Triangle(couleur, p1.x, p1.y, p2.x, p2.y, p3.x, p3.y);
-}
-
-FormeGeometrique* Triangle::homothetie2(const Vecteur2D&, const double) {
-	return NULL;
 }

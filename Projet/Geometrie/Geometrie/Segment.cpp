@@ -49,7 +49,8 @@ void Segment::dessiner(const Dessin& d) {
 }
 
 void Segment::homothetie(const Vecteur2D &p, const double zoom) {
-	//A  VOIR COMMENT FAIRE
+	v1 = v1.homothetie(p, zoom);
+	v2 = v2.homothetie(p, zoom);
 }
 
 void Segment::rotation(const Vecteur2D &centre, const double a) {
@@ -64,9 +65,12 @@ void Segment::translation(const Vecteur2D &pos) {
 	v2 = v2.translation(pos);
 }
 
-/*FormeGeometrique* Segment::homothetie2(const Vecteur2D &p, const double zoom) {
-	//A VOIR COMMENT FAIRE
-}*/
+FormeGeometrique* Segment::homothetie2(const Vecteur2D &p, const double zoom) {
+	Vecteur2D _v1 = v1.homothetie(p, zoom);
+	Vecteur2D _v2 = v2.homothetie(p, zoom);
+	Segment *s = new Segment(couleur, _v1.x, _v1.y, _v2.x, _v2.y);
+	return s;
+}
 
 FormeGeometrique* Segment::rotation2(const Vecteur2D &centre, const double a) {
 	//Rotation V1
@@ -80,8 +84,4 @@ FormeGeometrique* Segment::translation2(const Vecteur2D &pos) {
 	Vecteur2D p1 = v1.translation(pos);
 	Vecteur2D p2 = v2.translation(pos);
 	return new Segment(couleur, p1.x, p1.y, p2.x, p2.y);
-}
-
-FormeGeometrique* Segment::homothetie2(const Vecteur2D&, const double) {
-	return NULL;
 }

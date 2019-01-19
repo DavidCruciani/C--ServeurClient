@@ -57,8 +57,9 @@ void Cercle::dessiner(const Dessin& d) {
 	d.dessiner(*this);
 }
 
-void Cercle::homothetie(const Vecteur2D&, const double zoom) {
-
+void Cercle::homothetie(const Vecteur2D &p, const double zoom) {
+	vCentre = vCentre.homothetie(p, zoom);
+	rayon = rayon * zoom;
 }
 
 void Cercle::rotation(const Vecteur2D &centre, const double a) {
@@ -70,7 +71,8 @@ void Cercle::translation(const Vecteur2D &pos) {
 }
 
 FormeGeometrique* Cercle::homothetie2(const Vecteur2D &p, const double zoom) {
-	return NULL;
+	Vecteur2D _vCentre = vCentre.homothetie(p, zoom);
+	return new Cercle(couleur, _vCentre.x, _vCentre.y, rayon * zoom);
 }
 
 FormeGeometrique * Cercle::rotation2(const Vecteur2D &centre, const double angle) {

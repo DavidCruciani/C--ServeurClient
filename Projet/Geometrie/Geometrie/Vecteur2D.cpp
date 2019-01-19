@@ -10,6 +10,14 @@ Vecteur2D::operator string() const
 	return os.str();
 }
 
+Vecteur2D Vecteur2D::homothetie(const Vecteur2D & v, double scaleFactor) const
+{
+	double x1 = v.x + ((x - v.x) * scaleFactor);
+	double y1 = v.y + ((y - v.y) * scaleFactor);
+
+	return Vecteur2D(x1, y1);
+}
+
 ostream & operator <<(ostream & os, const Vecteur2D & u) {
 	os << (string)u;
 	return os;

@@ -91,7 +91,12 @@ void Polygone::dessiner(const Dessin& d) {
 	d.dessiner(*this);
 }
 
-void Polygone::homothetie(const Vecteur2D &p, const double zoom) {}
+void Polygone::homothetie(const Vecteur2D &p, const double zoom) {
+	for (int i = 0; i < listePoints.size(); i++) {
+		Vecteur2D *v = new Vecteur2D(listePoints[i]->homothetie(p, zoom));
+		listePoints[i] = v;
+	}
+}
 
 void Polygone::rotation(const Vecteur2D &centre, const double a) {
 	for (int i = 0; i < listePoints.size(); i++) {
@@ -121,8 +126,13 @@ FormeGeometrique* Polygone::translation2(const Vecteur2D &pos) {
 	return p;
 }
 
-FormeGeometrique* Polygone::homothetie2(const Vecteur2D&, const double) {
-	return NULL;
+FormeGeometrique* Polygone::homothetie2(const Vecteur2D &p, const double zoom) {
+	Polygone *poly = new Polygone(couleur);
+	for (int i = 0; i < listePoints.size(); i++) {
+		Vecteur2D *v = new Vecteur2D(listePoints[i]->homothetie(p, zoom));
+		poly->listePoints.push_back(v);
+	}
+	return poly;
  }
 
 ostream& operator <<(ostream &os, const Polygone &p) {

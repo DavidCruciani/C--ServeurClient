@@ -60,6 +60,8 @@ public:
 		return Vecteur2D(x*a, y*a);
 	}
 
+	Vecteur2D homothetie(const Vecteur2D & v, double scaleFactor) const;
+
 	inline Vecteur2D rotation(const Vecteur2D &centre, const double a) {
 		Vecteur2D origine = Vecteur2D(this->x - centre.x, this->y - centre.y);
 		double x1 = centre.x + (origine.x * COS(a) - origine.y * SIN(a));

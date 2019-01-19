@@ -117,9 +117,9 @@ int main()
 	charger = txt;
 	liste = charger->charge(fichier, traitement);
 	cout << " Affichage formes fichier\n\n";
-	for (int i = 0; i < liste.size(); i++)
+	//for (int i = 0; i < liste.size(); i++)
 		//cout << liste[i]<<"\n";
-		liste[i]->dessiner(*d);
+		//liste[i]->dessiner(*d);
 	                                 
 	//////// CREATION Segment //////////
 	instruction = "Segment(10,15,20,26)";
@@ -141,14 +141,16 @@ int main()
 	cout << "Forme obtenue ==>     " << c << "\n\n\n" << endl;
 
 	c->dessiner(*d);
-	
+	*/
 	//////// CREATION Triangle //////////
 	instruction = "Triangle(20,10.5,30,25,17,30)";
 	FormeGeometrique *t = traitement->traiter(instruction);
 	cout << "Forme attendue : Triangle(20,10,30,25,17,43)\n\n" << endl;
 	cout << "Forme obtenue ==>     " << t << "\n\n\n" << endl;
 	t->dessiner(*d);
-	
+	t = t->homothetie2(Vecteur2D(5, 6), 20);
+	t->dessiner(*d);
+	/*
 	//////// CREATION POLYGONE //////////
 	instruction = "Polygone{=green(5,1)(6,7)(7,8)(4,6)}";
 	FormeGeometrique *poly = traitement->traiter(instruction);
