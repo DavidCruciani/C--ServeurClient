@@ -22,7 +22,7 @@ FormeGeometrique* TraitementComposee::traiter1(const char *instruction) const {
 		composee = new TraitementComposee(triangle);
 		traitement = composee;
 		//-----------------------------------------------------------------
-		int posDeb, posForme, posFin, i;
+		size_t posDeb, posForme, posFin, i;
 		string couleur, ins, donnee;
 		Composee *c = new Composee();
 		if (strchr(instruction, '=') != NULL) {
