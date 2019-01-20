@@ -1,4 +1,5 @@
 #include "TraitementForme.h"
+#include "Erreur.h"
 
 TraitementForme::TraitementForme(TraitementForme *f):suivant(f){}
 
@@ -14,6 +15,6 @@ FormeGeometrique* TraitementForme::traiter(const char *traitement) {
 			if (forme != NULL)
 				return forme;
 		}
-		return NULL;
+		throw new Erreur("Instruction incorrecte");
 	}
 }

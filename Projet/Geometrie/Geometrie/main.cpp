@@ -20,78 +20,129 @@
 using namespace std;
 int main()
 {
-	cout << "essai des vecteurs 2D \n";
-
-	//Vecteur2D u1(2, 3), u2(2, 3), w, v1(35, -63), u3(3, 4), u4(3, -4), v3;
+	cout << "Bienvenue \n" << endl;
 	Vecteur2D* A = new Vecteur2D(-4.5, 3.5);
 	Vecteur2D* B = new Vecteur2D(-1, -3); 
 	Vecteur2D* C = new Vecteur2D(4, -1);
 	Vecteur2D* D = new Vecteur2D(4.5, 1.5);
 	Vecteur2D* E = new Vecteur2D(2, 4.5);
 	Vecteur2D* F = new Vecteur2D(-1.5, 2);
-	//FormeGeometrique *  c1=new Cercle(200, 100, 50);
-	//FormeGeometrique *  c1=new Cercle(20, 10,20);
-	FormeGeometrique *  c1 = new Cercle("blue",2, 1, 2);
-	//FormeGeometrique * s1=new Segment(1,2,3,4);
-	FormeGeometrique * s1=new Segment("red",1,2,3,2);
-	Triangle t1(2, 2, 10, 2, 8, 8), t2(-3, 1, 4, 2, 2, 5), t3(0, 0, 0, 2, 2, 0), t4(1, 1, 3, 3, 5, 1);
-	FormeGeometrique * t5 = new Triangle(2, 2, 10, 2, 8, 8);
-	FormeGeometrique * t6 = new Triangle(1, 1, 6, 7, 14, 1);
+
+	FormeGeometrique *  c = new Cercle("blue",2, 1, 2);
+	FormeGeometrique *  c1;
+
+	FormeGeometrique * s = new Segment("red",1,2,3,2);
+	FormeGeometrique * s1;
+
+	FormeGeometrique * t = new Triangle(2, 2, 10, 2, 8, 8);
+	FormeGeometrique * t1;
+
 	Polygone * p = new Polygone("green");
+	Polygone * p1;
+
 	Composee * comp = new Composee("green");
+	Composee * comp1;
 
 	vector<FormeGeometrique*> liste;
 
+	Sauvegarde *save = new SauvegarderTxt;
+
 	Dessin *d=new DessinJava() ;
 
-	/*cout << " u1 = " << u1 << endl;
-	cout << " u2 = " << u2 << endl;
-	cout << " u1 - u2 = " << u1 - u2 << endl;
-	cout << " 5*u1 = " << u1 * 5 << "\n" << endl;*/
 	
-	cout << (string)*c1 << endl;
-	cout << "aire du cerlce: " << c1->getAire() << "\n" << endl;
+	//////// CREATION Cercle //////////
+	cout << "Voici un cercle: \n" << endl;
+	cout << c << endl;
+	system("pause");
+
+	cout << "\nAire du cerlce: " << c->getAire() << "\n" << endl;
+	system("pause");
+
+	cout << "Maintenant un magnifique dessin:\n" << endl;
+	c->dessiner(*d);
+	system("pause");
+
+	cout << "Une translation\n" << endl;
+	c1 = c->translation2(Vecteur2D(5, 5));
+	c1->dessiner(*d);
+	system("pause");
+
+	cout << "Une homotethie\n" << endl;
+	c1 = c->homothetie2(Vecteur2D(7, 5), 2);
+	c1->dessiner(*d);
+	system("pause");
+
+	cout << "Sauvegarde du cercle dans Formes.txt qui sera cree sur le bureau\n" << endl;
+	save->sauvegarde(c);
+	system("pause");
 	
-	cout << s1 << endl;
-	cout << "aire du segment: " << s1->getAire() << "\n" << endl;
+
+	//////// CREATION Segment //////////
+	cout << "\nVoici un Segment:" << endl;
+	cout << s << endl;
+	system("pause");
+
+	cout << "\nAire du segment: " << s->getAire() << "\n" << endl;
+	system("pause");
+
+	cout << "Maintenant un magnifique dessin:\n" << endl;
+	s->dessiner(*d);
+	system("pause");
+
+	cout << "Une translation\n" << endl;
+	s1 = s->translation2(Vecteur2D(5, 5));
+	s1->dessiner(*d);
+	system("pause");
+
+	cout << "Une rotation\n" << endl;
+	s1 = s->rotation2(Vecteur2D(2, 2), 30);
+	s1->dessiner(*d);
+	system("pause");
+
+	cout << "Une homotethie\n" << endl;
+	s1 = s->homothetie2(Vecteur2D(7, 5), 2);
+	s1->dessiner(*d);
+	system("pause");
+
+	cout << "Sauvegarde du segment dans Formes.txt qui sera cree sur le bureau\n" << endl;
+	save->sauvegarde(s);
+	system("pause");
+
 	
-	/*cout << t1 << endl;
+	//////// CREATION Triangle //////////
+	cout << "\nVoici un Triangle" << endl;
+	cout << t << endl;
+	system("pause");
+
+	cout << "\nAire du triangle: " << t->getAire() << "\n" << endl;
+	system("pause");
+
+	cout << "Maintenant un magnifique dessin:\n" << endl;
+	t->dessiner(*d);
+	system("pause");
+
+	cout << "Une translation\n" << endl;
+	t1 = t->translation2(Vecteur2D(5, 5));
+	t1->dessiner(*d);
+	system("pause");
+
+	cout << "Une rotation\n" << endl;
+	t1 = t->rotation2(Vecteur2D(2, 2), 30);
+	t1->dessiner(*d);
+	system("pause");
+
+	cout << "Une homotethie\n" << endl;
+	t1 = t->homothetie2(Vecteur2D(7, 5), 2);
+	t1->dessiner(*d);
+	system("pause");
+
+	cout << "Sauvegarde du triangle dans Formes.txt qui sera cree sur le bureau\n" << endl;
+	save->sauvegarde(t);
+	system("pause");
 	
-	//cout << "determinant du triangle: " << t5.getV1().determinant(t1.getV2()) << endl;
-	cout << "aire du triangle: " << t1.getAire() <<"\n"<< endl; //67.05
 
-    cout << t2 << endl;
-	cout << "aire du triangle: " << t2.getAire() << "\n" << endl;
-
-	cout << "aire du triangle: " << t3.getAire() << "\n" << endl;*/
-
-	cout << "aire du triangle 4: " << t4.getAire() << "\n" << endl;
-	cout << "aire du triangle 4: " << t6->getAire() << "\n" << endl;
-
-	/*cout <<"AB: "<< t2.getV1().norme(t1.getV2()) << endl;
-	cout <<"AC: "<< t2.getV1().norme(t1.getV3()) << endl;
-	cout <<"BC: "<< t2.getV2().norme(t1.getV3()) << endl;*/
-
-	cout << "\n";
-	cout << "aire du triangle: " << t5->getAire() << "\n" << endl;
-	//t5->dessiner(*d);
-	//system("pause");
-	//t5=t5->rotation2(Vecteur2D(2, 2), 30);
-	//t5->dessiner(*d);
-
-	cout << "\n";
-	//c1->dessiner(*d);
-	//c1 = c1->homothetie2(Vecteur2D(2, 2), 2);
-	//c1->dessiner(*d);
-	//system("pause");
-
-	cout << "\n";
-
-	//s1->dessiner(*d);
-	//s1 = s1->homothetie2(Vecteur2D(2, 2), 2);
-	//s1->dessiner(*d);
-
-
+	//////// CREATION Polygone //////////
+	cout << "\nVoici un Polygone" << endl;
 	p->addPoint(A);
 	p->addPoint(B);
 	p->addPoint(C);
@@ -99,88 +150,96 @@ int main()
 	p->addPoint(E);
 	p->addPoint(F);
 
-	//cout << "aire du polygone : " << p->getAire() << "\n" << endl;
+	cout << p << endl;
+	system("pause");
 
-	//p->dessiner(*d);
-	//p = p->homothetie2(Vecteur2D(2, 2), 2);
-	//p = p->rotation2(Vecteur2D(2, 2), 2);
-	//p = p->translation2(Vecteur2D(2, 2));
-	//p->dessiner(*d);
+	cout << "\nAire du polygone : " << p->getAire() << "\n" << endl;
+	system("pause");
 
-	comp->addForme(c1);
-	comp->addForme(s1);
-	comp->addForme(t5);
-	//comp->dessiner(*d);
+	cout << "Maintenant un magnifique dessin:\n" << endl;
+	p->dessiner(*d);
+	system("pause");
 
-	////////Sauvegarde//////////
-	Sauvegarde *save = new SauvegarderTxt;
-	save->sauvegarde(s1);
-	save->sauvegarde(c1);
-	save->sauvegarde(t5);
+	cout << "Une homotethie\n" << endl;
+	p1 = p->homothetie2(Vecteur2D(7, 5), 2);
+	p1->dessiner(*d);
+	system("pause");
+
+	cout << "Une rotation\n" << endl;
+	p1 = p->rotation2(Vecteur2D(2, 2), 30);
+	p1->dessiner(*d);
+	system("pause");
+
+	cout << "Une translation\n" << endl;
+	p1 = p->translation2(Vecteur2D(5, 5));
+	p1->dessiner(*d);
+	system("pause");
+
+	cout << "Sauvegarde du polygone dans Formes.txt qui sera cree sur le bureau\n" << endl;
 	save->sauvegarde(p);
-	save->sauvegarde(comp);
+	system("pause");
+	
 
-	// TEST chaine de responsabilite
-	//const char* instruction;
+	//////// CREATION Composee //////////
+	cout << "\nVoici une Forme composee \n" << endl;
+	comp->addForme(c);
+	comp->addForme(s);
+	comp->addForme(t);
+
+	cout << comp << endl;
+	system("pause");
+
+	cout << "\nAire de la forme composee : " << comp->getAire() << "\n" << endl;
+	system("pause");
+
+	cout << "Maintenant un magnifique dessin:\n" << endl;
+	comp->dessiner(*d);
+	system("pause");
+
+	cout << "Une homotethie\n" << endl;
+	comp1 = comp->homothetie2(Vecteur2D(7, 5), 2);
+	comp1->dessiner(*d);
+	system("pause");
+
+	cout << "Une rotation\n" << endl;
+	comp1 = comp->rotation2(Vecteur2D(2, 2), 30);
+	comp1->dessiner(*d);
+	system("pause");
+
+	cout << "Une translation\n" << endl;
+	comp1 = comp->translation2(Vecteur2D(5, 5));
+	comp1->dessiner(*d);
+	system("pause");
+
+	cout << "Sauvegarde de la Forme composee dans Formes.txt qui sera cree sur le bureau\n" << endl;
+	save->sauvegarde(comp);
+	system("pause");
+
+
+	//////// Chargement //////////
 	const char *fichier = "C:/Users/Matthias/Desktop/Formes.txt";
+
 	TraitementForme *traitement, *segment, *cercle, *polygone, *triangle, *composee;
+	
+	//Chaine responsabilité pour chargement
+	//faire dans main permet de la creer qu une fois
 	segment = new TraitementSegment(NULL);
 	cercle = new TraitementCercle(segment);
 	polygone = new TraitementPolygone(cercle);
 	triangle = new TraitementTriangle(polygone);
 	composee = new TraitementComposee(triangle);
 	traitement = composee;
+
 	// Chaine responsabilite Chargement
 	Charger *charger;
 	charger = new ChargerTxt(NULL);
 	liste = charger->charge(fichier, traitement);
+
 	cout << " Affichage formes fichier\n\n";
+
 	for (int i = 0; i < liste.size(); i++)
 		liste[i]->dessiner(*d);
 	                                 
-	//////// CREATION Segment //////////
-	/*instruction = "Segment(10,15,20,26)";
-	//const char *insSegment = "(5,6,7,8);";
-	FormeGeometrique *s = traitement->traiter(instruction);
-	cout << "Forme attendue : Segment (10,15,20,26)\n\n" << endl;
-	cout << "Forme obtenue ==>     " << s << "\n\n\n" << endl;*/
-
-	
-	//s->dessiner(*d);
-	/*
-	//////// CREATION CERCLE //////////
-	instruction = "Cercle(11,20,30)=cyan";
-	FormeGeometrique *c = traitement->traiter(instruction);
-	cout << "Forme attendue : Cercle=orange(11,20,30)\n\n" << endl;
-	cout << "Forme obtenue ==>     " << c << "\n\n\n" << endl;
-
-	c->dessiner(*d);
-	*/
-	//////// CREATION Triangle //////////
-	/*instruction = "Triangle(2,1,3,2,1,3)";
-	FormeGeometrique *t = traitement->traiter(instruction);
-	cout << "Forme attendue : Triangle(2,1,3,2,1,3)\n\n" << endl;
-	cout << "Forme obtenue ==>     " << t << "\n\n\n" << endl;
-	t->dessiner(*d);
-	t = t->homothetie2(Vecteur2D(5, 6), 2);
-	t->dessiner(*d);*/
-	/*
-	//////// CREATION POLYGONE //////////
-	instruction = "Polygone{=green(5,1)(6,7)(7,8)(4,6)}";
-	FormeGeometrique *poly = traitement->traiter(instruction);
-	cout << "Forme attendue : Polygone{(5,1)(6,7)(7,8)(4,6)}\n\n" << endl;
-	cout << "Forme obtenue ==>     " << poly << "\n\n\n" << endl;
-
-	poly->dessiner(*d);
-
-	
-	//////// CREATION Composee //////////
-	instruction = "Composee{=red;*Segment(5,4,3,6)**Cercle(5,9,10)*}";
-	FormeGeometrique *compo = traitement->traiter(instruction);
-	cout << "Forme attendue : Composee{ Segment(5,4,3,6), Cercle(5,9,10)}" << endl;
-	cout << "Forme obtenue ==>     " << compo << "\n\n\n" << endl;
-
-	compo->dessiner(*d);*/
 	system("pause");
 	return EXIT_SUCCESS;
 }

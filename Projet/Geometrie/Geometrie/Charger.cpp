@@ -1,4 +1,5 @@
 #include "Charger.h"
+#include "Erreur.h"
 
 Charger::Charger(Charger *s): suivant(s) {}
 
@@ -16,7 +17,7 @@ vector<FormeGeometrique*> Charger::charge(const char *fichier, TraitementForme *
 			if (liste.size() > 0)	// on a créé des formes
 				break;
 		}
-		return liste;
+		throw Erreur("Fichier incorrect");
 	}
 
 }

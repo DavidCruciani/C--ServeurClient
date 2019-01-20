@@ -91,7 +91,7 @@ void Composee::translation(const Vecteur2D &trans) {
 	}
 }
 
-FormeGeometrique* Composee::homothetie2(const Vecteur2D& p, const double zoom) {
+Composee* Composee::homothetie2(const Vecteur2D& p, const double zoom) {
 	Composee *compo = new Composee(couleur);
 	for (int i = 0; i < groupe.size(); i++) {
 		compo->groupe.push_back(groupe[i]->homothetie2(p, zoom));
@@ -99,7 +99,7 @@ FormeGeometrique* Composee::homothetie2(const Vecteur2D& p, const double zoom) {
 	return compo;
 }
 
-FormeGeometrique* Composee::rotation2(const Vecteur2D& v, const double r) {
+Composee* Composee::rotation2(const Vecteur2D& v, const double r) {
 	Composee *compo = new Composee(couleur);
 	for (int i = 0; i < groupe.size(); i++) {
 		compo->groupe.push_back(groupe[i]->rotation2(v, r));
@@ -107,7 +107,7 @@ FormeGeometrique* Composee::rotation2(const Vecteur2D& v, const double r) {
 	return compo;
 }
 
-FormeGeometrique* Composee::translation2(const Vecteur2D& v) {
+Composee* Composee::translation2(const Vecteur2D& v) {
 	Composee *compo = new Composee(couleur);
 	for (int i = 0; i < groupe.size(); i++) {
 		compo->groupe.push_back(groupe[i]->translation2(v));

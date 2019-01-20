@@ -1,5 +1,6 @@
 #include "Cercle.h"
 #include "Dessin.h"
+#include "Erreur.h"
 
 
 Cercle::Cercle():Simple("black"),vCentre(0,0),rayon(0){} // on définit par défaut la couleur sur noir
@@ -8,9 +9,13 @@ Cercle::Cercle(const Cercle &c):Simple(c.couleur), vCentre(c.vCentre.x, c.vCentr
 
 Cercle::~Cercle(){}
 
-Cercle::Cercle(const double x, const double y, const double r) : Simple("black"), vCentre(x,y), rayon(r){}
+Cercle::Cercle(const double x, const double y, const double r) : Simple("black"), vCentre(x,y), rayon(r) {
+	setRayon(r);
+}
 
-Cercle::Cercle(const string couleur, const double x, const double y, const double r) : Simple(couleur), vCentre(x, y), rayon(r) {}
+Cercle::Cercle(const string couleur, const double x, const double y, const double r) : Simple(couleur), vCentre(x, y), rayon(r) {
+	setRayon(r);
+}
 
 void Cercle::setCentre(const double x1, const double y1) {
 	vCentre.x = x1;

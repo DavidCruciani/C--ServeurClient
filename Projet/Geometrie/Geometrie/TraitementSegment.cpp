@@ -5,7 +5,7 @@ TraitementSegment::TraitementSegment(TraitementForme *suivant):TraitementForme(s
 
 FormeGeometrique* TraitementSegment::traiter1(const char *instruction) const {
 	// * Une instruction correcte est de la forme suivante:
-	// * "Segment(x1,y1,x2,y2,r)=couleur" 
+	// * "Segment(x1,y1,x2,y2)=couleur" 
 	// * La couleur est optionnelle
 	if (strstr(instruction, "Segment") != NULL) {
 	double x1, x2, y1, y2;if (sscanf_s(instruction, "Segment(%lf,%lf,%lf,%lf)", &x1, &y1, &x2, &y2) != 0) {
