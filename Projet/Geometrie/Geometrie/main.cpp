@@ -71,10 +71,10 @@ int main()
 	cout <<"BC: "<< t2.getV2().norme(t1.getV3()) << endl;*/
 
 	cout << "\n";
-	//t5->dessiner(*d);
+	t5->dessiner(*d);
 	//system("pause");
 	t5=t5->rotation2(Vecteur2D(2, 2), 30);
-	//t5->dessiner(*d);
+	t5->dessiner(*d);
 
 	cout << "\n";
 	//c1->dessiner(*d);
@@ -98,20 +98,28 @@ int main()
 
 	//cout << "aire du polygone : " << p->getAire() << "\n" << endl;
 
-	p->dessiner(*d);
+	//p->dessiner(*d);
 	//p = p->homothetie2(Vecteur2D(2, 2), 2);
 	//p = p->rotation2(Vecteur2D(2, 2), 2);
-	p = p->translation2(Vecteur2D(2, 2));
-	p->dessiner(*d);
+	//p = p->translation2(Vecteur2D(2, 2));
+	//p->dessiner(*d);
 
-	/*comp->addForme(c1);
+	comp->addForme(c1);
 	comp->addForme(s1);
 	comp->addForme(t5);
-	comp->dessiner(*d);*/
+	//comp->dessiner(*d);
+
+	////////Sauvegarde//////////
+	Sauvegarde *save = new SauvegarderTxt;
+	//save->sauvegarde(s1);
+	//save->sauvegarde(c1);
+	save->sauvegarde(t5);
+	//save->sauvegarde(p);
+	//save->sauvegarde(comp);
 
 	// TEST chaine de responsabilite
 	//const char* instruction;
-	const char *fichier = "test.txt";
+	const char *fichier = "C:/Users/Matthias/Desktop/Formes.txt";
 	TraitementForme *traitement, *segment, *cercle, *polygone, *triangle, *composee;
 	segment = new TraitementSegment(NULL);
 	cercle = new TraitementCercle(segment);
@@ -133,12 +141,9 @@ int main()
 	//const char *insSegment = "(5,6,7,8);";
 	FormeGeometrique *s = traitement->traiter(instruction);
 	cout << "Forme attendue : Segment (10,15,20,26)\n\n" << endl;
-	cout << "Forme obtenue ==>     " << s << "\n\n\n" << endl;
+	cout << "Forme obtenue ==>     " << s << "\n\n\n" << endl;*/
 
-	////////Sauvegarde//////////
-	Sauvegarde *save = new SauvegarderTxt;
-	save->sauvegarde(s1);*/
-
+	
 	//s->dessiner(*d);
 	/*
 	//////// CREATION CERCLE //////////

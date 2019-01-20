@@ -85,6 +85,8 @@ public:
 	 */
 	operator string() const;
 
+	string toString()const;
+
 	/**
 	 * Calcule l'aire du polygone
 	 * @return double (aire du polygone)

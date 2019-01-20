@@ -65,6 +65,8 @@ public:
 	 * Surcharge de l'operateur string pour l'affichage de la forme 
 	 */
 	virtual operator string()const = 0;
+	
+	virtual string toString() const = 0;
 
 	//------TRANSFORMATIONS GEOMETRIQUES SUR LA FORME---------
 	/**

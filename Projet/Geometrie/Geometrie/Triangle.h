@@ -91,6 +91,8 @@ public:
 	 */
 	operator string()const;
 
+	string toString()const;
+
 	/**
 	 * Calcule l'aire du triangle
 	 * @return double (aire du triangle)

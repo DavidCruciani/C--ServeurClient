@@ -36,6 +36,13 @@ Segment::operator string() const {
 	return oss.str();
 }
 
+string Segment::toString() const {
+	ostringstream oss;
+	//oss << "Segment[couleur: " << couleur << ", Point 1: " << v1 << ", Point 2: " << v2 << "]";
+	oss << "Segment(" << v1.toString() << "," << v2.toString() << ")" << "=" << couleur;
+	return oss.str();
+}
+
 
 double Segment::getAire() const {
 	return 0;

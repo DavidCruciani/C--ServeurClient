@@ -23,6 +23,19 @@ ostream & operator <<(ostream & os, const Vecteur2D & u) {
 	return os;
 }
 
+string Vecteur2D::toString() const {
+	ostringstream os;
+	os << x << "," << y ;
+	return os.str();
+}
+
+string Vecteur2D::toString2() const {
+	ostringstream os;
+	os << "(" << x << "," << y << ")";
+	return os.str();
+}
+
+
 double Vecteur2D::norme(const Vecteur2D& v)const {
 	return sqrt( pow(v.x - x, 2) + pow(v.y - y, 2) );
 }

@@ -9,7 +9,7 @@ FormeGeometrique* TraitementPolygone::traiter1(const char *instruction) const {
 	// * La couleur est optionnelle
 	if (strstr(instruction, "Polygone") != NULL) {
 		string ins, donnee;
-		int posDeb, posPoint, posFin;
+		size_t posDeb, posPoint, posFin;
 		ins = instruction;
 		posDeb = ins.find("{");
 		donnee = ins.substr(0, posDeb+1);

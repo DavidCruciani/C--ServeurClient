@@ -84,6 +84,9 @@ public:
 
 	operator string() const;
 
+	string toString()const;
+	string toString2() const;
+
 	friend ostream & operator <<(ostream & os, const Vecteur2D & u);
 
 

@@ -74,6 +74,8 @@ public:
 	 */
 	operator string()const;
 
+	string toString()const;
+
 	/**
 	 * Calcule l'aire du segment
 	 * @return double (aire du segment)

@@ -75,6 +75,8 @@ public:
 	 * Surcharge de l'operateur string pour l'affichage de la forme composee
 	 */
 	operator string()const;
+
+	string toString()const;
 	
 	//------TRANSFORMATIONS GEOMETRIQUES SUR LE TRIANGLE---------
 	/**

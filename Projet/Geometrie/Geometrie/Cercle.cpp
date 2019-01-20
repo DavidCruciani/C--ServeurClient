@@ -39,6 +39,12 @@ Cercle::operator string() const{
 	return oss.str();
 }
 
+string Cercle::toString() const {
+	ostringstream oss;
+	oss << "Cercle(" << vCentre.toString() << "," << rayon << ")" << "=" << couleur;
+	return oss.str();
+}
+
 bool Cercle::operator==(const Cercle& c) const{
 	return couleur==c.getCouleur() && this->getCentre() == c.getCentre() && rayon == c.getRayon();
 }

@@ -1,5 +1,2 @@
-Segment :red 1 2 3 4Segment :red 1 2 3 4
-Segment :red 1 2 3 4
-Segment :red 1 2 3 4
-Segment :red 1 2 3 4
-Segment :red 1 2 3 4
+Triangle(2,2,8.9282,6,4.19615,10.1962)=green
+Triangle(2,2,8.9282,6,4.19615,10.1962)=green

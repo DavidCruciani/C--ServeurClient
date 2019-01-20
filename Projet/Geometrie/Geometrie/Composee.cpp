@@ -59,6 +59,20 @@ Composee::operator string() const {
 
 }
 
+string Composee::toString() const {
+	ostringstream oss;
+	oss << "Composee{=" << couleur << ";";
+	for (int i = 0; i < groupe.size(); i++) {
+		if (i == groupe.size() - 1)
+			oss << "*" << groupe[i]->toString() << "*";
+		else
+			oss << "*" << groupe[i]->toString() << "*";
+	}
+	oss << "}";
+	return oss.str();
+
+}
+
 void Composee::homothetie(const Vecteur2D &p, const double zoom) {
 	for (int i = 0; i < groupe.size(); i++) {
 		groupe[i]->homothetie(p, zoom);

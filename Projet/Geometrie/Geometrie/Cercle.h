@@ -75,6 +75,8 @@ public:
 	 * Surcharge de l'operateur string pour l'affichage du cercle
 	 */
 	operator string()const;
+
+	string toString()const;
 	/**
 	 * Surcharge de l'operateur == pour l'egalité entre cercles
 	 * @param Cercle& cercle a comparer avec this

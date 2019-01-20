@@ -7,8 +7,21 @@ Connexion* Connexion::singlCo = NULL;
 
 Connexion * Connexion::getSinglCo() {
 
-	if (singlCo == NULL)
-		singlCo = new Connexion(ADRESSE_IP, PORT_SERVEUR);
+	if (singlCo == NULL) {
+		string adresse="";
+		short port;
+		cout << "Adresse: "<< endl;
+		cin >> adresse;
+		cout << "\n";
+
+		cout << "Port: " << endl;
+		cin >> port;
+		cout << "\n";
+
+		singlCo= new Connexion(adresse.c_str(), port);
+		//singlCo = new Connexion(ADRESSE_IP, PORT_SERVEUR);
+	}
+		
 
 	return singlCo;
 }

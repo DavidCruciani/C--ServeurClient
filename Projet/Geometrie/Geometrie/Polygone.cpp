@@ -72,6 +72,19 @@ Polygone::operator string() const {
 	return oss.str();
 }
 
+string Polygone::toString() const {
+	ostringstream oss;
+	oss << "Polygone{=" << couleur << ";";
+	for (int i = 0; i < listePoints.size(); i++) {
+		if (i == listePoints.size())
+			oss << listePoints[i]->toString2();
+		else
+			oss << listePoints[i]->toString2();
+	}
+	oss << "}";
+	return oss.str();
+}
+
 double Polygone::getAire() const {
 
 	double somme = 0;
