@@ -106,19 +106,19 @@ public:
 	 * @param double facteur de zoom
 	 * @return FormeGeometrique* (forme composee issu de l'homotetie)
 	 */
-	virtual FormeGeometrique* homothetie2(const Vecteur2D&, const double);
+	virtual Composee* homothetie2(const Vecteur2D&, const double);
 	/**
 	 * Creee une nouvelle forme composee a partir de la rotation de la forme composee actuel
 	 * @param Vecteur2D& point de reference de la rotation
 	 * @param double angle de rotation (en radians)
 	 * @return FormeGeometrique* (forme composee issu de la rotation)
 	 */
-	virtual FormeGeometrique* rotation2(const Vecteur2D&, const double);
+	virtual Composee* rotation2(const Vecteur2D&, const double);
 	/**
 	 * Creee une nouvelle forme composee a partir de la translation de la forme composee actuel
 	 * @param Vecteur2D& point vecteur de translation
 	 * @return FormeGeometrique* (forme composee issu de la translation)
 	 */
-	virtual FormeGeometrique* translation2(const Vecteur2D&);
+	virtual Composee* translation2(const Vecteur2D&);
 };
 #endif
