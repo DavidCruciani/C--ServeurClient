@@ -111,11 +111,11 @@ int main()
 
 	////////Sauvegarde//////////
 	Sauvegarde *save = new SauvegarderTxt;
-	//save->sauvegarde(s1);
-	//save->sauvegarde(c1);
+	save->sauvegarde(s1);
+	save->sauvegarde(c1);
 	save->sauvegarde(t5);
-	//save->sauvegarde(p);
-	//save->sauvegarde(comp);
+	save->sauvegarde(p);
+	save->sauvegarde(comp);
 
 	// TEST chaine de responsabilite
 	//const char* instruction;
@@ -133,7 +133,6 @@ int main()
 	liste = charger->charge(fichier, traitement);
 	cout << " Affichage formes fichier\n\n";
 	for (int i = 0; i < liste.size(); i++)
-		//cout << liste[i]<<"\n";
 		liste[i]->dessiner(*d);
 	                                 
 	//////// CREATION Segment //////////

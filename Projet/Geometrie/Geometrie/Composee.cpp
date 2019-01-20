@@ -12,7 +12,7 @@ Composee::~Composee() {
 void Composee::addForme(FormeGeometrique *f) {
 	//on attribue la couleur de this a f
 	f->setCouleur(this->getCouleur());
-	groupe.push_back(f);
+	groupe.push_back(f->cloner());
 }
 
 void Composee::delForme(const FormeGeometrique *f) {
