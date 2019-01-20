@@ -21,7 +21,7 @@ inline const T operator - (const T & u, const T & v)
 class Vecteur2D
 {
 public:
-	double x, y;
+	double x=0, y=0;
 
 	inline  Vecteur2D(const double & x, const double & y) : x(x), y(y) {}
 	inline Vecteur2D() : x(0), y(0) {}

@@ -1,4 +1,5 @@
 #include "ChargerTxt.h"
+#include "Erreur.h"
 
 vector<FormeGeometrique*> ChargerTxt::charge1(const char *fichier, TraitementForme *traitement) {
 	vector<FormeGeometrique*> liste;
@@ -17,7 +18,7 @@ vector<FormeGeometrique*> ChargerTxt::charge1(const char *fichier, TraitementFor
 			return liste;
 		}
 		//else
-			//ENVOI D'EXCEPTION ===> L'ouverture du fichier à échoué
+		throw Erreur("lecture echoué");//ENVOI D'EXCEPTION ===> L'ouverture du fichier à échoué
 		
 	}
 	else 

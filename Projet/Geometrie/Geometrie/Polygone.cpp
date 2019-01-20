@@ -75,8 +75,8 @@ Polygone::operator string() const {
 double Polygone::getAire() const {
 
 	double somme = 0;
-	for (int i = 0; i < listePoints.size()-1; i++) {
-
+	for (size_t i = 0; i < listePoints.size()-1; i++) {
+		
 		somme += (listePoints[i]->x*listePoints[i + 1]->y) - (listePoints[i + 1]->x*listePoints[i]->y);
 	}
 

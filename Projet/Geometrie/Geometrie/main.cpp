@@ -22,7 +22,7 @@ int main()
 {
 	cout << "essai des vecteurs 2D \n";
 
-	Vecteur2D u1(2, 3), u2(2, 3), w, v1(35, -63), u3(3, 4), u4(3, -4), v3;
+	//Vecteur2D u1(2, 3), u2(2, 3), w, v1(35, -63), u3(3, 4), u4(3, -4), v3;
 	Vecteur2D* A = new Vecteur2D(-4.5, 3.5);
 	Vecteur2D* B = new Vecteur2D(-1, -3); 
 	Vecteur2D* C = new Vecteur2D(4, -1);
@@ -34,7 +34,7 @@ int main()
 	FormeGeometrique *  c1 = new Cercle("blue",2, 1, 2);
 	//FormeGeometrique * s1=new Segment(1,2,3,4);
 	FormeGeometrique * s1=new Segment("red",1,2,3,2);
-	Triangle t1(2, 2, 10, 2, 8, 8), t2(-3, 1, 4, 2, 2, 5), t3(0, 0, 0, 2, 2, 0), t4(1, 1, 3, 3, 5, 1);
+	//Triangle t1(2, 2, 10, 2, 8, 8), t2(-3, 1, 4, 2, 2, 5), t3(0, 0, 0, 2, 2, 0), t4(1, 1, 3, 3, 5, 1);
 	FormeGeometrique * t5 = new Triangle(2, 2, 10, 2, 8, 8);
 	Polygone * p = new Polygone("green");
 	Composee * comp = new Composee("green");
@@ -43,10 +43,10 @@ int main()
 
 	Dessin *d=new DessinJava() ;
 
-	cout << " u1 = " << u1 << endl;
+	/*cout << " u1 = " << u1 << endl;
 	cout << " u2 = " << u2 << endl;
 	cout << " u1 - u2 = " << u1 - u2 << endl;
-	cout << " 5*u1 = " << u1 * 5 << "\n" << endl;
+	cout << " 5*u1 = " << u1 * 5 << "\n" << endl;*/
 	
 	cout << (string)*c1 << endl;
 	cout << "aire du cerlce: " << c1->getAire() << "\n" << endl;
@@ -54,12 +54,12 @@ int main()
 	cout << s1 << endl;
 	cout << "aire du segment: " << s1->getAire() << "\n" << endl;
 	
-	//cout << t1 << endl;
+	/*cout << t1 << endl;
 	
 	//cout << "determinant du triangle: " << t5.getV1().determinant(t1.getV2()) << endl;
 	cout << "aire du triangle: " << t1.getAire() <<"\n"<< endl; //67.05
 
-//	cout << t2 << endl;
+    cout << t2 << endl;
 	cout << "aire du triangle: " << t2.getAire() << "\n" << endl;
 
 	cout << "aire du triangle: " << t3.getAire() << "\n" << endl;
@@ -68,7 +68,7 @@ int main()
 
 	cout <<"AB: "<< t2.getV1().norme(t1.getV2()) << endl;
 	cout <<"AC: "<< t2.getV1().norme(t1.getV3()) << endl;
-	cout <<"BC: "<< t2.getV2().norme(t1.getV3()) << endl;
+	cout <<"BC: "<< t2.getV2().norme(t1.getV3()) << endl;*/
 
 	cout << "\n";
 	//t5->dessiner(*d);
@@ -110,7 +110,7 @@ int main()
 	comp->dessiner(*d);*/
 
 	// TEST chaine de responsabilite
-	/*const char* instruction;
+	//const char* instruction;
 	const char *fichier = "test.txt";
 	TraitementForme *traitement, *segment, *cercle, *polygone, *triangle, *composee;
 	segment = new TraitementSegment(NULL);
@@ -120,14 +120,13 @@ int main()
 	composee = new TraitementComposee(triangle);
 	traitement = composee;
 	// Chaine responsabilite Chargement
-	Charger *txt, *charger;
-	txt = new ChargerTxt(NULL);
-	charger = txt;
+	Charger *charger;
+	charger = new ChargerTxt(NULL);
 	liste = charger->charge(fichier, traitement);
 	cout << " Affichage formes fichier\n\n";
-	//for (int i = 0; i < liste.size(); i++)
+	for (int i = 0; i < liste.size(); i++)
 		//cout << liste[i]<<"\n";
-		//liste[i]->dessiner(*d);*/
+		liste[i]->dessiner(*d);
 	                                 
 	//////// CREATION Segment //////////
 	/*instruction = "Segment(10,15,20,26)";
@@ -175,7 +174,6 @@ int main()
 	cout << "Forme obtenue ==>     " << compo << "\n\n\n" << endl;
 
 	compo->dessiner(*d);*/
-
 	system("pause");
 	return EXIT_SUCCESS;
 }
