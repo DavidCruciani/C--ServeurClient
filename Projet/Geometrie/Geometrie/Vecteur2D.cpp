@@ -34,8 +34,3 @@ string Vecteur2D::toString2() const {
 	os << "(" << x << "," << y << ")";
 	return os.str();
 }
-
-
-double Vecteur2D::norme(const Vecteur2D& v)const {
-	return sqrt( pow(v.x - x, 2) + pow(v.y - y, 2) );
-}

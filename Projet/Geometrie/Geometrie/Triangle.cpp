@@ -54,13 +54,6 @@ string Triangle::toString() const {
 
 
 double Triangle::getAire() const {
-	double norme12,norme,norme13,norme23;
-
-	norme12 = v1.norme(v2);
-	norme13 = v1.norme(v3);
-	norme23 = v2.norme(v3);
-	
-	norme = (norme12 + norme13 + norme23) / 2;
 
 	return 0.5 * abs(((v2.x - v1.x)*(v3.y - v1.y) - (v3.x - v1.x)*(v2.y - v1.y)));
 

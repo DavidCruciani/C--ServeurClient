@@ -79,8 +79,6 @@ public:
 	inline const Vecteur2D operator - () const {
 		return Vecteur2D(-x, -y);
 	}
-	
-	double norme(const Vecteur2D&)const;
 
 	operator string() const;
 

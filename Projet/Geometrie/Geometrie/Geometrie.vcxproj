@@ -125,7 +125,6 @@
     <ClInclude Include="DessinJava.h" />
     <ClInclude Include="Erreur.h" />
     <ClInclude Include="FormeGeometrique.h" />
-    <ClInclude Include="Matrice.h" />
     <ClInclude Include="Polygone.h" />
     <ClInclude Include="Sauvegarde.h" />
     <ClInclude Include="SauvegarderTxt.h" />
@@ -150,7 +149,6 @@
     <ClCompile Include="Erreur.cpp" />
     <ClCompile Include="FormeGeometrique.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Matrice.cpp" />
     <ClCompile Include="Polygone.cpp" />
     <ClCompile Include="SauvegarderTxt.cpp" />
     <ClCompile Include="Segment.cpp" />

@@ -34,8 +34,9 @@ int main()
 	FormeGeometrique *  c1 = new Cercle("blue",2, 1, 2);
 	//FormeGeometrique * s1=new Segment(1,2,3,4);
 	FormeGeometrique * s1=new Segment("red",1,2,3,2);
-	//Triangle t1(2, 2, 10, 2, 8, 8), t2(-3, 1, 4, 2, 2, 5), t3(0, 0, 0, 2, 2, 0), t4(1, 1, 3, 3, 5, 1);
+	Triangle t1(2, 2, 10, 2, 8, 8), t2(-3, 1, 4, 2, 2, 5), t3(0, 0, 0, 2, 2, 0), t4(1, 1, 3, 3, 5, 1);
 	FormeGeometrique * t5 = new Triangle(2, 2, 10, 2, 8, 8);
+	FormeGeometrique * t6 = new Triangle(1, 1, 6, 7, 14, 1);
 	Polygone * p = new Polygone("green");
 	Composee * comp = new Composee("green");
 
@@ -62,19 +63,21 @@ int main()
     cout << t2 << endl;
 	cout << "aire du triangle: " << t2.getAire() << "\n" << endl;
 
-	cout << "aire du triangle: " << t3.getAire() << "\n" << endl;
+	cout << "aire du triangle: " << t3.getAire() << "\n" << endl;*/
 
 	cout << "aire du triangle 4: " << t4.getAire() << "\n" << endl;
+	cout << "aire du triangle 4: " << t6->getAire() << "\n" << endl;
 
-	cout <<"AB: "<< t2.getV1().norme(t1.getV2()) << endl;
+	/*cout <<"AB: "<< t2.getV1().norme(t1.getV2()) << endl;
 	cout <<"AC: "<< t2.getV1().norme(t1.getV3()) << endl;
 	cout <<"BC: "<< t2.getV2().norme(t1.getV3()) << endl;*/
 
 	cout << "\n";
-	t5->dessiner(*d);
+	cout << "aire du triangle: " << t5->getAire() << "\n" << endl;
+	//t5->dessiner(*d);
 	//system("pause");
-	t5=t5->rotation2(Vecteur2D(2, 2), 30);
-	t5->dessiner(*d);
+	//t5=t5->rotation2(Vecteur2D(2, 2), 30);
+	//t5->dessiner(*d);
 
 	cout << "\n";
 	//c1->dessiner(*d);
