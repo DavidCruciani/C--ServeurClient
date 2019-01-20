@@ -136,6 +136,8 @@ string Connexion::recevoir() const {
 	}
 	catch (Erreur erreur) {
 		cerr << erreur << endl;
+		system("pause");
+		exit(1);
 	}
 	string msg(reponse);
 	return msg;

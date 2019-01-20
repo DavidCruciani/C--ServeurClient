@@ -98,17 +98,19 @@ int main()
 
 	//cout << "aire du polygone : " << p->getAire() << "\n" << endl;
 
-	//p->dessiner(*d);
-	p=p->rotation2(Vecteur2D(2, 2), 2);
 	p->dessiner(*d);
-	
+	//p = p->homothetie2(Vecteur2D(2, 2), 2);
+	//p = p->rotation2(Vecteur2D(2, 2), 2);
+	p = p->translation2(Vecteur2D(2, 2));
+	p->dessiner(*d);
+
 	/*comp->addForme(c1);
 	comp->addForme(s1);
 	comp->addForme(t5);
 	comp->dessiner(*d);*/
 
 	// TEST chaine de responsabilite
-	const char* instruction;
+	/*const char* instruction;
 	const char *fichier = "test.txt";
 	TraitementForme *traitement, *segment, *cercle, *polygone, *triangle, *composee;
 	segment = new TraitementSegment(NULL);
@@ -125,7 +127,7 @@ int main()
 	cout << " Affichage formes fichier\n\n";
 	//for (int i = 0; i < liste.size(); i++)
 		//cout << liste[i]<<"\n";
-		//liste[i]->dessiner(*d);
+		//liste[i]->dessiner(*d);*/
 	                                 
 	//////// CREATION Segment //////////
 	/*instruction = "Segment(10,15,20,26)";

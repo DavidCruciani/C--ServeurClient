@@ -102,39 +102,50 @@ void Polygone::homothetie(const Vecteur2D &p, const double zoom) {
 
 void Polygone::rotation(const Vecteur2D &centre, const double a) {
 	for (int i = 0; i < listePoints.size(); i++) {
-		listePoints[i] = &listePoints[i]->rotation(centre, a);
+		Vecteur2D *v = new Vecteur2D(listePoints[i]->rotation(centre, a));
+		listePoints[i] = v;
+		//listePoints[i] = &listePoints[i]->rotation(centre, a);
 	}
 }
 
 void Polygone::translation(const Vecteur2D &pos) {
 	for (int i = 0; i < listePoints.size(); i++) {
-		listePoints[i] = &listePoints[i]->translation(pos);
+		Vecteur2D *v = new Vecteur2D(listePoints[i]->translation(pos));
+		listePoints[i] = v;
+		//listePoints[i] = &listePoints[i]->translation(pos);
 	}
 }
 
 Polygone* Polygone::rotation2(const Vecteur2D &centre, const double a) {
 	Polygone *p = this->cloner();
-	for (int i = 0; i < p->listePoints.size(); i++) {
-		p->listePoints[i] = &p->listePoints[i]->rotation(centre, a);
+	p->setPts(this->getPts());
+	for (int i = 0; i < listePoints.size(); i++) {
+		Vecteur2D *v = new Vecteur2D(listePoints[i]->rotation(centre, a));
+		p->listePoints.push_back(v);
+		//p->listePoints[i] = &p->listePoints[i]->rotation(centre, a);
 	}
 	return p;
 }
 
 Polygone* Polygone::translation2(const Vecteur2D &pos) {
-	Polygone *p = new Polygone(*this);
-	for (int i = 0; i < p->listePoints.size(); i++) {
-		p->listePoints[i] = &p->listePoints[i]->translation(pos);
+	Polygone *p = this->cloner();
+	p->setPts(this->getPts());
+	for (int i = 0; i < listePoints.size(); i++) {
+		Vecteur2D *v = new Vecteur2D(listePoints[i]->translation(pos));
+		p->listePoints.push_back(v);
+		//p->listePoints[i] = &p->listePoints[i]->translation(pos);
 	}
 	return p;
 }
 
-Polygone* Polygone::homothetie2(const Vecteur2D &p, const double zoom) {
-	Polygone *poly = this->cloner();
+Polygone* Polygone::homothetie2(const Vecteur2D &pos, const double zoom) {
+	Polygone *p = this->cloner();
+	p->setPts(this->getPts());
 	for (int i = 0; i < listePoints.size(); i++) {
-		Vecteur2D *v = new Vecteur2D(listePoints[i]->homothetie(p, zoom));
-		poly->listePoints.push_back(v);
+		Vecteur2D *v = new Vecteur2D(listePoints[i]->homothetie(pos, zoom));
+		p->listePoints.push_back(v);
 	}
-	return poly;
+	return p;
  }
 
 ostream& operator <<(ostream &os, const Polygone &p) {
