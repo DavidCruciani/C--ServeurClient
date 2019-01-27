@@ -46,11 +46,14 @@ public:
 	 */
 	string getCouleur() const;
 
+
 	/**
 	 * Envoie une requête de dessin au serveur
 	 * @param Dessin& 
 	 */
-	virtual void dessiner(const Dessin&) = 0;
+	//virtual void dessiner(const Dessin&) = 0;
+
+
 	/**
 	 * Calcule l'aire de la forme
 	 * @return double (aire de la forme)

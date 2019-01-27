@@ -96,11 +96,13 @@ public:
 	 */
 	virtual double getAire()const;
 
+
 	/**
 	 * Envoie une requête de dessin au serveur
 	 * @param Dessin&
 	 */
-	virtual void dessiner(const Dessin&);
+	//virtual void dessiner(const Dessin&);
+
 
 	//------TRANSFORMATIONS GEOMETRIQUES SUR LE CERCLE---------
 	/**

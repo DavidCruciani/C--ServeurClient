@@ -32,9 +32,9 @@ FormeGeometrique* Composee::cloner() const {
 	return new Composee(*this);
 }
 
-void Composee::dessiner(const Dessin& d) {
+/*void Composee::dessiner(const Dessin& d) {
 	d.dessiner(*this);
-}
+}*/
 
 double Composee::getAire() const {
 	double aire = 0;
