@@ -59,17 +59,18 @@ int main()
 	system("pause");
 
 	cout << "Maintenant un magnifique dessin:\n" << endl;
-	c->dessiner(*d);
+	d->dessiner(*c);
+	//c->dessiner(*d);
 	system("pause");
 
 	cout << "Une translation\n" << endl;
 	c1 = c->translation2(Vecteur2D(5, 5));
-	c1->dessiner(*d);
+	d->dessiner(*c1);
 	system("pause");
 
 	cout << "Une homotethie\n" << endl;
 	c1 = c->homothetie2(Vecteur2D(7, 5), 2);
-	c1->dessiner(*d);
+	d->dessiner(*c1);
 	system("pause");
 
 	cout << "Sauvegarde du cercle dans Formes.txt qui sera cree sur le bureau\n" << endl;
@@ -86,22 +87,22 @@ int main()
 	system("pause");
 
 	cout << "Maintenant un magnifique dessin:\n" << endl;
-	s->dessiner(*d);
+	d->dessiner(*s);
 	system("pause");
 
 	cout << "Une translation\n" << endl;
 	s1 = s->translation2(Vecteur2D(5, 5));
-	s1->dessiner(*d);
+	d->dessiner(*s1);
 	system("pause");
 
 	cout << "Une rotation\n" << endl;
 	s1 = s->rotation2(Vecteur2D(2, 2), 30);
-	s1->dessiner(*d);
+	d->dessiner(*s1);
 	system("pause");
 
 	cout << "Une homotethie\n" << endl;
 	s1 = s->homothetie2(Vecteur2D(7, 5), 2);
-	s1->dessiner(*d);
+	d->dessiner(*s1);
 	system("pause");
 
 	cout << "Sauvegarde du segment dans Formes.txt qui sera cree sur le bureau\n" << endl;
@@ -118,22 +119,22 @@ int main()
 	system("pause");
 
 	cout << "Maintenant un magnifique dessin:\n" << endl;
-	t->dessiner(*d);
+	d->dessiner(*t);
 	system("pause");
 
 	cout << "Une translation\n" << endl;
 	t1 = t->translation2(Vecteur2D(5, 5));
-	t1->dessiner(*d);
+	d->dessiner(*t1);
 	system("pause");
 
 	cout << "Une rotation\n" << endl;
 	t1 = t->rotation2(Vecteur2D(2, 2), 30);
-	t1->dessiner(*d);
+	d->dessiner(*t1);
 	system("pause");
 
 	cout << "Une homotethie\n" << endl;
 	t1 = t->homothetie2(Vecteur2D(7, 5), 2);
-	t1->dessiner(*d);
+	d->dessiner(*t1);
 	system("pause");
 
 	cout << "Sauvegarde du triangle dans Formes.txt qui sera cree sur le bureau\n" << endl;
@@ -157,22 +158,22 @@ int main()
 	system("pause");
 
 	cout << "Maintenant un magnifique dessin:\n" << endl;
-	p->dessiner(*d);
+	d->dessiner(*p);
 	system("pause");
 
 	cout << "Une homotethie\n" << endl;
 	p1 = p->homothetie2(Vecteur2D(7, 5), 2);
-	p1->dessiner(*d);
+	d->dessiner(*p1);
 	system("pause");
 
 	cout << "Une rotation\n" << endl;
 	p1 = p->rotation2(Vecteur2D(2, 2), 30);
-	p1->dessiner(*d);
+	d->dessiner(*p1);
 	system("pause");
 
 	cout << "Une translation\n" << endl;
 	p1 = p->translation2(Vecteur2D(5, 5));
-	p1->dessiner(*d);
+	d->dessiner(*p1);
 	system("pause");
 
 	cout << "Sauvegarde du polygone dans Formes.txt qui sera cree sur le bureau\n" << endl;
@@ -193,22 +194,22 @@ int main()
 	system("pause");
 
 	cout << "Maintenant un magnifique dessin:\n" << endl;
-	comp->dessiner(*d);
+	d->dessiner(*comp);
 	system("pause");
 
 	cout << "Une homotethie\n" << endl;
 	comp1 = comp->homothetie2(Vecteur2D(7, 5), 2);
-	comp1->dessiner(*d);
+	d->dessiner(*comp1);
 	system("pause");
 
 	cout << "Une rotation\n" << endl;
 	comp1 = comp->rotation2(Vecteur2D(2, 2), 30);
-	comp1->dessiner(*d);
+	d->dessiner(*comp1);
 	system("pause");
 
 	cout << "Une translation\n" << endl;
 	comp1 = comp->translation2(Vecteur2D(5, 5));
-	comp1->dessiner(*d);
+	d->dessiner(*comp1);
 	system("pause");
 
 	cout << "Sauvegarde de la Forme composee dans Formes.txt qui sera cree sur le bureau\n" << endl;
@@ -238,7 +239,7 @@ int main()
 	cout << " Affichage formes fichier\n\n";
 
 	for (int i = 0; i < liste.size(); i++)
-		liste[i]->dessiner(*d);
+		d->dessiner(*liste[i]);
 	                                 
 	system("pause");
 	return EXIT_SUCCESS;

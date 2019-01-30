@@ -66,11 +66,15 @@ public:
 	 * @return FormeGeometrique* (copie de la forme composee)
 	 */
 	virtual FormeGeometrique* cloner() const;
+
+
 	/**
 	 * Envoie une requête de dessin au serveur
 	 * @param Dessin&
 	 */
-	virtual void dessiner(const Dessin&);
+	//virtual void dessiner(const Dessin&);
+
+
 	/**
 	 * Surcharge de l'operateur string pour l'affichage de la forme composee
 	 */

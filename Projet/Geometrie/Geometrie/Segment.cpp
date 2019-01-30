@@ -51,9 +51,9 @@ double Segment::getAire() const {
 FormeGeometrique* Segment::cloner() const {
 	return new Segment(*this);
 }
-void Segment::dessiner(const Dessin& d) {
+/*void Segment::dessiner(const Dessin& d) {
 	d.dessiner(*this);
-}
+}*/
 
 void Segment::homothetie(const Vecteur2D &p, const double zoom) {
 	v1 = v1.homothetie(p, zoom);

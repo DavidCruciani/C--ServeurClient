@@ -64,9 +64,9 @@ double Cercle::getAire() const{
 	return rayon * rayon* 3.141592653589;
 }
 
-void Cercle::dessiner(const Dessin& d) {
+/*void Cercle::dessiner(const Dessin& d) {
 	d.dessiner(*this);
-}
+}*/
 
 void Cercle::homothetie(const Vecteur2D &p, const double zoom) {
 	vCentre = vCentre.homothetie(p, zoom);

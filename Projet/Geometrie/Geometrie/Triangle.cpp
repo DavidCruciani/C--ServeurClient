@@ -63,9 +63,9 @@ FormeGeometrique* Triangle::cloner() const {
 	return new Triangle(*this);
 }
 
-void Triangle::dessiner(const Dessin& d) {
+/*void Triangle::dessiner(const Dessin& d) {
 	d.dessiner(*this);
-}
+}*/
 
 void Triangle::homothetie(const Vecteur2D &p, const double zoom) {
 	v1 = v1.homothetie(p, zoom);

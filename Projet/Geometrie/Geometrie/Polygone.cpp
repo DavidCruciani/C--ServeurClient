@@ -7,8 +7,8 @@ Polygone::Polygone(const string c):Simple(c) {}
 
 Polygone::Polygone(const Polygone &p):Simple(p.couleur) {}
 
-Polygone::Polygone(Vecteur2D* v1, Vecteur2D* v2, Vecteur2D* v3, Vecteur2D* v4): Simple("black") {
-	addPoint(v1); addPoint(v2); addPoint(v3); addPoint(v4);
+Polygone::Polygone(const string c,Vecteur2D* v1, Vecteur2D* v2, Vecteur2D* v3): Simple(c) {
+	addPoint(v1); addPoint(v2); addPoint(v3);
 }
 
 Polygone::~Polygone() {
@@ -102,9 +102,9 @@ Polygone* Polygone::cloner() const {
 	return new Polygone(*this);
 }
 
-void Polygone::dessiner(const Dessin& d) {
+/*void Polygone::dessiner(const Dessin& d) {
 	d.dessiner(*this);
-}
+}*/
 
 void Polygone::homothetie(const Vecteur2D &p, const double zoom) {
 	for (int i = 0; i < listePoints.size(); i++) {
