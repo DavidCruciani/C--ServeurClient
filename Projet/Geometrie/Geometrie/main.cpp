@@ -225,10 +225,10 @@ int main()
 	cout << "Sauvegarde de la Forme composee dans Formes.txt qui sera cree sur le bureau\n" << endl;
 	save->sauvegarde(comp);
 	system("pause");
-
+	
 
 	//////// Chargement //////////
-	const char *fichier = "C:/Users/Ludovic GILLOT/Documents/Formes.txt";
+	 string fichier = "C:/Users/" + SauvegarderTxt::getPath() + "/Documents/Formes.txt";
 
 	TraitementForme *traitement, *segment, *cercle, *polygone, *triangle, *composee;
 	
@@ -244,7 +244,7 @@ int main()
 	// Chaine responsabilite Chargement
 	Charger *charger;
 	charger = new ChargerTxt(NULL);
-	liste = charger->charge(fichier, traitement);
+	liste = charger->charge(fichier.c_str(), traitement);
 
 	cout << " Affichage formes fichier\n\n";
 

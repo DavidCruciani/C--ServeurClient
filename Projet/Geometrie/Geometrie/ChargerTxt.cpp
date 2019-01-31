@@ -7,6 +7,7 @@ vector<FormeGeometrique*> ChargerTxt::charge1(const char *fichier, TraitementFor
 		ifstream fichier1(fichier, ios::in);
 		if (fichier1)  // si l'ouverture a fonctionné
 		{
+			cout << "\nfichier ouvert\n";
 			string ligne;
 			while (getline(fichier1, ligne))  // on lit toutes les lignes du fichier ( 1 ligne = 1 forme géometrique )
 			{
