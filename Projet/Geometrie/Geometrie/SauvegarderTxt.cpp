@@ -9,9 +9,20 @@ SauvegarderTxt::SauvegarderTxt(){}
 
 SauvegarderTxt::~SauvegarderTxt(){}
 
+string SauvegarderTxt::path = "";
+
+string SauvegarderTxt::getPath() {
+	if (path == "") {
+		cout << "Nom de l'utilisateur de l'ordi: " << endl;
+		cin >> path;
+		cout << "\n";
+	}
+	return path;
+}
+
 void SauvegarderTxt::sauvegarde(const FormeGeometrique * f) const
 {
-	ofstream fichier("C:/Users/Ludovic GILLOT/Documents/Formes.txt", ios::out | ios::app);
+	ofstream fichier("C:/Users/" + getPath() + "/Documents/Formes.txt", ios::out | ios::app);
 	//Test d'ouverture
 	if (fichier.is_open())
 		cout << "Fichier ouvert \n";

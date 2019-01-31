@@ -31,10 +31,13 @@ int main()
 	FormeGeometrique *  c;
 
 	try {
-		c = new Cercle("blue",2, 1, -2);
+		c = new Cercle("blue",2, 1, 2);
+
 	}
 	catch (Erreur erreur) {
 		cerr << erreur << endl;
+		system("pause");
+		exit(1);
 	}
 	FormeGeometrique *  c1;
 

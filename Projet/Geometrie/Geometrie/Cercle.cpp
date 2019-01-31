@@ -11,14 +11,14 @@ Cercle::~Cercle(){}
 
 Cercle::Cercle(const double x, const double y, const double r) : Simple("black"), vCentre(x,y), rayon(r) {
 	if (r < 0)
-		throw new Erreur("rayon negatif");
+		throw Erreur("rayon negatif");
 	else
 	setRayon(r);
 }
 
 Cercle::Cercle(const string couleur, const double x, const double y, const double r) : Simple(couleur), vCentre(x, y), rayon(r) {
 	if (r < 0)
-		throw new Erreur("rayon negatif");
+		throw Erreur("rayon negatif");
 	else
 		setRayon(r);
 }
@@ -30,7 +30,7 @@ void Cercle::setCentre(const double x1, const double y1) {
 
 void Cercle::setRayon(const double r) {
 	if (r < 0)
-		throw new Erreur("rayon negatif");
+		throw Erreur("rayon negatif");
 	else
 		rayon = r;
 }
