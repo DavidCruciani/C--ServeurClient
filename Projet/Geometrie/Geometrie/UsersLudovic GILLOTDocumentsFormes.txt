@@ -1,0 +1,4 @@
+Cercle(2,1,2)=blue
+Segment(1,2,3,2)=red
+Triangle(2,2,10,2,8,8)=black
+Polygone{=green;(-4.5,3.5)(-1,-3)(4,-1)(4.5,1.5)(2,4.5)(-1.5,2)}

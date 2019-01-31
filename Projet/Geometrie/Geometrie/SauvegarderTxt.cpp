@@ -11,7 +11,7 @@ SauvegarderTxt::~SauvegarderTxt(){}
 
 void SauvegarderTxt::sauvegarde(const FormeGeometrique * f) const
 {
-	ofstream fichier("C:/Users/Matthias/Desktop/Formes.txt", ios::out | ios::app);
+	ofstream fichier("C:/Users/Ludovic GILLOT/Documents/Formes.txt", ios::out | ios::app);
 	//Test d'ouverture
 	if (fichier.is_open())
 		cout << "Fichier ouvert \n";

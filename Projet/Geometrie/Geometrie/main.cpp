@@ -16,6 +16,7 @@
 #include "ChargerTxt.h"
 #include "DessinJava.h"
 #include "SauvegarderTxt.h"
+#include "Erreur.h"
 
 using namespace std;
 int main()
@@ -27,8 +28,14 @@ int main()
 	Vecteur2D* D = new Vecteur2D(4.5, 1.5);
 	Vecteur2D* E = new Vecteur2D(2, 4.5);
 	Vecteur2D* F = new Vecteur2D(-1.5, 2);
+	FormeGeometrique *  c;
 
-	FormeGeometrique *  c = new Cercle("blue",2, 1, 2);
+	try {
+		c = new Cercle("blue",2, 1, -2);
+	}
+	catch (Erreur erreur) {
+		cerr << erreur << endl;
+	}
 	FormeGeometrique *  c1;
 
 	FormeGeometrique * s = new Segment("red",1,2,3,2);
@@ -218,7 +225,7 @@ int main()
 
 
 	//////// Chargement //////////
-	const char *fichier = "C:/Users/Matthias/Desktop/Formes.txt";
+	const char *fichier = "C:/Users/Ludovic GILLOT/Documents/Formes.txt";
 
 	TraitementForme *traitement, *segment, *cercle, *polygone, *triangle, *composee;
 	
